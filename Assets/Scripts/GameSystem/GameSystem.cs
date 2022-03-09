@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class GameSystem : GameSystemStateMachine
 {
+    [Header("Starting parameters")]
     public int playerStartMoney;
     public Date startingDate;
+
     public static int playerMoney;
     public static bool FirstLaunch = true;
     public static Date date;
+
+    [Header("Minigame parameters")]
+    public PlaneMinigameParam defaultPlaneMinigameParameter;
+
+    public static PlaneMinigameParam planeMinigameParameter;
 
     private void Start()
     {
@@ -18,9 +25,10 @@ public class GameSystem : GameSystemStateMachine
             date = startingDate;
             playerMoney = playerStartMoney;
             SetMode(new DefaultMode());
+            planeMinigameParameter = defaultPlaneMinigameParameter;
+
             FirstLaunch = false;
         }
-        
     }
 
     

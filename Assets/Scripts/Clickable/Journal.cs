@@ -6,6 +6,6 @@ public class Journal : Clickable
 {
     protected override void ClickedEvent()
     {
-        GameSystem.ChangeScene(1, new BoatMiniGameMode());
+        GameSystem.ChangeScene(2, new PlaneMinigame());
     }
 }

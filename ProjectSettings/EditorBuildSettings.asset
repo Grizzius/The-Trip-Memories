@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: 
     guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
     path: Assets/Scenes/Test Scene.unity
@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BoatMiniGame.unity
     guid: bcf8da2e092e52844bf09b6f2fbcbf22
+  - enabled: 1
+    path: Assets/Scenes/Minigames/PlaneMinigame.unity
+    guid: ffc11c3e27e777a458f0608a255a90ac
   m_configObjects: {}

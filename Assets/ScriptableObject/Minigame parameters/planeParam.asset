@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69aaf194f15e6a4bb9c6a1d4f140428, type: 3}
+  m_Name: planeParam
+  m_EditorClassIdentifier: 
+  planeTemplate: {fileID: 3671859464357575772, guid: 1b0b1811817440f408d8c1aea853a5dc, type: 3}
+  "montgolfi\xE8reTemplate": {fileID: 5693315364011472869, guid: 3b175a5dd9416814187cb805decba5dd, type: 3}
+  duration: 90
