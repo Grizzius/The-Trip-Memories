@@ -16,13 +16,16 @@ public class PlaneMinigame : MiniGameGameMode
 
     int spawnIndexthreshold = 8;
 
+    float initialDelay = 2;
+
     public int timer;
 
     public override void Start()
     {
         timer = GameSystem.planeMinigameParameter.duration;
-        gameSystem = Object.FindObjectOfType<GameSystem>();
+        initialDelay = GameSystem.planeMinigameParameter.initialSpawnDelay;
 
+        gameSystem = Object.FindObjectOfType<GameSystem>();
         parameter = GameSystem.planeMinigameParameter;
 
         player = Object.FindObjectOfType<PlaneController>();
@@ -62,6 +65,7 @@ public class PlaneMinigame : MiniGameGameMode
         {
             if (parameter != null)
             {
+                //Choisi de spawn un avion ou une montgolfière
                 int spawnIndex = Random.Range(0, 10);
 
                 if (spawnIndex < spawnIndexthreshold)
@@ -84,7 +88,7 @@ public class PlaneMinigame : MiniGameGameMode
                 }
             }
 
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(initialDelay / 100 * (timer + 10));
         }
     }
 }

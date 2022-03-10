@@ -7,4 +7,6 @@ public class PlaneMinigameParam : ScriptableObject
     public Montgolfière montgolfièreTemplate;
 
     public int duration;
+
+    public float initialSpawnDelay;
 }

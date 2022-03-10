@@ -22,4 +22,10 @@ public class Montgolfière : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        PlaneController player = other.transform.GetComponent<PlaneController>();
+        player.TakeDamage();
+    }
 }
