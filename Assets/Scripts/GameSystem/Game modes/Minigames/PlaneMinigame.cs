@@ -75,6 +75,8 @@ public class PlaneMinigame : MiniGameGameMode
                     newPlane.transform.position = new Vector3(20, Random.Range(-6, 6), 0);
 
                     newPlane.direction = (player.transform.position - newPlane.transform.position);
+
+                    newPlane.speed = Random.Range(3f, 8f);
                 }
                 else
                 {

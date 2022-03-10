@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/PlaneMinigame.unity
     guid: ffc11c3e27e777a458f0608a255a90ac
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 33a83ca854fa733469f7d0beaeb1d037
   m_configObjects: {}
