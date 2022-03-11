@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class VisitDoor : Clickable
 {
-    UIManager uiManager;
-    public Canvas triggeredCanvas;
+    public VisitPlace visit;
 
     protected override void Start()
     {
         base.Start();
-        uiManager = FindObjectOfType<UIManager>();
     }
     protected override void ClickedEvent()
     {
-        uiManager.ToggleUI(triggeredCanvas, true);
+        EventSystem.current.ActivateVisitOptionUI(ID, visit);
     }
 }

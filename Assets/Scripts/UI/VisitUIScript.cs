@@ -8,7 +8,7 @@ public class VisitUIScript : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        EventSystem.current.onStartVisitMode += StartVisit;
+        EventSystem.current.OnStartVisitMode += StartVisit;
     }
 
     public void TriggerAnim(string trigger)

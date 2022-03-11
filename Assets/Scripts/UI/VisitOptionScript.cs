@@ -6,9 +6,9 @@ using TMPro;
 
 public class VisitOptionScript : MonoBehaviour
 {
-    public bool update;
-    [Space]
     public VisitPlace visit;
+    public int id;
+
     [Header("UI elements")]
     public Slider priceSlider;
     public TextMeshProUGUI visitName;
@@ -16,9 +16,13 @@ public class VisitOptionScript : MonoBehaviour
     public TextMeshProUGUI priceText;
     public TextMeshProUGUI FunValueText;
     public Button confirmButton;
+
+    UIManager UIManager;
     
     int visitPrice;
     int funValue;
+
+    
 
     private void OnValidate()
     {
@@ -27,6 +31,7 @@ public class VisitOptionScript : MonoBehaviour
 
     private void Initialize()
     {
+        UIManager = FindObjectOfType<UIManager>();
         funValue = visit.DefaultFunValue;
 
         FunValueText.text = funValue.ToString();
@@ -45,6 +50,7 @@ public class VisitOptionScript : MonoBehaviour
     void Start()
     {
         Initialize();
+        EventSystem.current.OnActivateVisitOptionUI += OpenTab;
     }
 
     public void PressConfirmButton()
@@ -69,5 +75,23 @@ public class VisitOptionScript : MonoBehaviour
 
         funValue = Mathf.RoundToInt(visit.DefaultFunValue * 0.05f * visitPrice);
         FunValueText.text = funValue.ToString();
+    }
+
+    public void OpenTab(int ID, VisitPlace newVisit)
+    {
+        if(ID == id)
+        {
+            visit = newVisit;
+            Canvas canvas = GetComponent<Canvas>();
+            UIManager.ToggleUI(canvas, true);
+            Initialize();
+        }
+        
+    }
+
+    public void CloseTab()
+    {
+        Canvas canvas = GetComponent<Canvas>();
+        UIManager.ToggleUI(canvas, false);
     }
 }

@@ -12,7 +12,7 @@ public class VisitPlace : ScriptableObject
     public int minPrice;
     public int maxPrice;
     public int DefaultFunValue;
-    public RandomEvent[] randomEvents;
+    public RandomEventData randomEventData;
 
     public void OnValidate()
     {
@@ -25,12 +25,4 @@ public class VisitPlace : ScriptableObject
             maxPrice = minPrice;
         }
     }
-}
-
-[System.Serializable]
-public class RandomEvent
-{
-    public RandomEventData randomEventData;
-    [Range(1,100)]
-    public int probability = 50;
 }

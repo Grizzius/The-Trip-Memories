@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Clickable : MonoBehaviour
 {
+    public int ID;
     public string outlineID;
     MeshRenderer meshRenderer;
     bool canBeClicked;

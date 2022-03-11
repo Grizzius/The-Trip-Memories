@@ -19,22 +19,30 @@ public class EventSystem : MonoBehaviour
         
     }
 
-    public event Action<VisitPlace> onStartVisitMode;
+    public event Action<VisitPlace> OnStartVisitMode;
     public void StartVisitMode(VisitPlace visitPlace)
     {
-        if(onStartVisitMode != null)
-        {
-            onStartVisitMode(visitPlace);
-        }
+        OnStartVisitMode?.Invoke(visitPlace);
     }
 
-    public event Action onEndVisitMode;
+    public event Action OnEndVisitMode;
 
     public void EndVisitMode()
     {
-        if(onEndVisitMode != null)
-        {
-            onEndVisitMode();
-        }
+        OnEndVisitMode?.Invoke();
+    }
+
+    public event Action<int> OnActivateUI;
+    
+    public void ActivateUI(int ID)
+    {
+        OnActivateUI?.Invoke(ID);
+    }
+
+    public event Action<int, VisitPlace> OnActivateVisitOptionUI;
+
+    public void ActivateVisitOptionUI(int ID, VisitPlace visitPlace)
+    {
+        OnActivateVisitOptionUI?.Invoke(ID, visitPlace);
     }
 }
