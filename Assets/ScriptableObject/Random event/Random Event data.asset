@@ -15,3 +15,53 @@ MonoBehaviour:
   eventTitle: Random event
   eventText: A random event happened !
   moneyModifier: 5
+  luckModifier: 0
+  knowledgeModifier: 0
+  moneyCondition: 0
+  openDays: 0000000002000000
+  triggers:
+  - triggerType: 0
+    triggerName: 
+  probabilityType: 0
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.516507
+      outSlope: 4.516507
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 9.463937
+      value: 42.74394
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 12.635788
+      value: 19.908682
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 15.1157255
+      value: 36.98176
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
