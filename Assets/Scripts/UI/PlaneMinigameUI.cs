@@ -6,6 +6,7 @@ using TMPro;
 public class PlaneMinigameUI : MonoBehaviour
 {
     public TextMeshProUGUI chronoText;
+    public TextMeshProUGUI CollisionsCountText;
     PlaneMinigame planeMinigame;
     // Start is called before the first frame update
     void Start()
@@ -13,7 +14,11 @@ public class PlaneMinigameUI : MonoBehaviour
         planeMinigame = (PlaneMinigame)GameSystem.gameMode;
 
         StartCoroutine(Timer());
-        chronoText.text = planeMinigame.timer.ToString(); 
+        chronoText.text = planeMinigame.timer.ToString();
+
+        EventSystem.current.OnPlaneCollision += UpdateCollision;
+
+        UpdateCollision();
     }
 
     // Update is called once per frame
@@ -22,13 +27,27 @@ public class PlaneMinigameUI : MonoBehaviour
         
     }
 
+    void UpdateCollision()
+    {
+        CollisionsCountText.text = ("Collisions : " + planeMinigame.collisionCount);
+    }
+
     IEnumerator Timer()
     {
         while (true)
         {
             yield return new WaitForSeconds(1);
             planeMinigame.timer -= 1;
-            chronoText.text = planeMinigame.timer.ToString();
+
+            if(planeMinigame.timer > 0)
+            {
+                chronoText.text = planeMinigame.timer.ToString();
+            }
+            else
+            {
+                chronoText.text = "0";
+            }
+            
         }
     }
 }

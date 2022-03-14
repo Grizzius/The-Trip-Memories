@@ -67,6 +67,7 @@ public class PlaneController : MonoBehaviour
     {
         if (canTakeDamage)
         {
+            EventSystem.current.PlaneCollision();
             print("Damage");
             StartCoroutine(DamageEffect());
         }
