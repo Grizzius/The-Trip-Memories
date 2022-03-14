@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class PlaneMinigame : MiniGameGameMode
 {
-    private const bool V = true;
     GameSystem gameSystem;
     PlaneMinigameParam parameter;
-    bool canSpawnPlane = V;
 
     PlaneController player;
     
@@ -20,6 +18,8 @@ public class PlaneMinigame : MiniGameGameMode
 
     public int timer;
 
+    public int collisionCount = 0;
+
     public override void Start()
     {
         timer = GameSystem.planeMinigameParameter.duration;
@@ -31,6 +31,8 @@ public class PlaneMinigame : MiniGameGameMode
         player = Object.FindObjectOfType<PlaneController>();
 
         StartSpawnPlane();
+
+        EventSystem.current.OnPlaneCollision += IncreaseCollisionCount;
     }
 
     public override void Update()
@@ -46,12 +48,15 @@ public class PlaneMinigame : MiniGameGameMode
             StartSpawnPlane();
         }
 
-        Debug.Log(canSpawnPlane);
-
-        if(timer == 0)
+        if(timer == -15)
         {
             GameSystem.ChangeScene(0, new DefaultMode());
         }
+    }
+
+    public void IncreaseCollisionCount()
+    {
+        collisionCount++;
     }
 
     void StartSpawnPlane()
@@ -61,15 +66,17 @@ public class PlaneMinigame : MiniGameGameMode
 
     IEnumerator SpawnPlane()
     {
-        while (true)
+        while (timer > 0)
         {
             if (parameter != null)
             {
                 //Choisi de spawn un avion ou une montgolfière
                 int spawnIndex = Random.Range(0, 10);
 
+                
                 if (spawnIndex < spawnIndexthreshold)
                 {
+                    //Spawn un avion
                     newPlane = Object.Instantiate(parameter.planeTemplate);
 
                     newPlane.transform.position = new Vector3(20, Random.Range(-6, 6), 0);
@@ -80,6 +87,7 @@ public class PlaneMinigame : MiniGameGameMode
                 }
                 else
                 {
+                    //Spawn une montgolfière
                     newMontgolfière = Object.Instantiate(parameter.montgolfièreTemplate);
 
                     newMontgolfière.transform.position = new Vector3(20, Random.Range(-3,3), 0);

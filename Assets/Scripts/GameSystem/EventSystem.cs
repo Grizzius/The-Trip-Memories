@@ -45,4 +45,11 @@ public class EventSystem : MonoBehaviour
     {
         OnActivateVisitOptionUI?.Invoke(ID, visitPlace);
     }
+
+    public event Action OnPlaneCollision;
+
+    public void PlaneCollision()
+    {
+        OnPlaneCollision?.Invoke();
+    }
 }
