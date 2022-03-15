@@ -83,7 +83,7 @@ public class VisitOptionScript : MonoBehaviour
         {
             visit = newVisit;
             Canvas canvas = GetComponent<Canvas>();
-            UIManager.ToggleUI(canvas, true);
+            UIManager.ToggleUI(canvas, true, new PlayerUIState(PlayerScript.current));
             Initialize();
         }
         
@@ -92,6 +92,6 @@ public class VisitOptionScript : MonoBehaviour
     public void CloseTab()
     {
         Canvas canvas = GetComponent<Canvas>();
-        UIManager.ToggleUI(canvas, false);
+        UIManager.ToggleUI(canvas, false, new PlayerStateZoom(PlayerScript.current));
     }
 }

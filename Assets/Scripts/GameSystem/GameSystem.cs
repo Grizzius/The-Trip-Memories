@@ -8,10 +8,12 @@ public class GameSystem : GameSystemStateMachine
     [Header("Starting parameters")]
     public int playerStartMoney;
     public Date startingDate;
+    public int playerStartPositionID;
 
     public static int playerMoney;
     public static bool FirstLaunch = true;
     public static Date date;
+    public static GameSystem current;
 
     [Header("Minigame parameters")]
     public PlaneMinigameParam defaultPlaneMinigameParameter;
@@ -20,6 +22,7 @@ public class GameSystem : GameSystemStateMachine
 
     private void Start()
     {
+        current = this;
         if (FirstLaunch)
         {
             date = startingDate;

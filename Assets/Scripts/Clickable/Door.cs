@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Door : Clickable
 {
-    public GameObject position1;
-    public GameObject position2;
-
-    GameObject currentPlayerPosition;
+    public int position1ID;
+    public int position2ID;
 
     PlayerScript player;
 
@@ -15,20 +13,17 @@ public class Door : Clickable
     {
         base.Start();
         player = FindObjectOfType<PlayerScript>();
-        currentPlayerPosition = position1;
     }
 
     protected override void ClickedEvent()
     {
-        if (currentPlayerPosition == position1)
+        if (DefaultMode.playerPositionID == position1ID)
         {
-            player.transform.position = position2.transform.position;
-            currentPlayerPosition = position2;
+            PlayerPositions.current.MovePlayer(position2ID);
         }
-        else if (currentPlayerPosition == position2)
+        else if (DefaultMode.playerPositionID == position2ID)
         {
-            player.transform.position = position1.transform.position;
-            currentPlayerPosition = position1;
+            PlayerPositions.current.MovePlayer(position1ID);
         }
     }
 }

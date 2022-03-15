@@ -56,6 +56,6 @@ public class VisitSelectScript : MonoBehaviour
 
     public void CloseTab()
     {
-        UIManager.ToggleUI(self, false);
+        UIManager.ToggleUI(self, false, new PlayerStateZoom(PlayerScript.current));
     }
 }

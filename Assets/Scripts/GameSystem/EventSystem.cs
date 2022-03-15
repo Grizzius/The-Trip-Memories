@@ -43,6 +43,7 @@ public class EventSystem : MonoBehaviour
 
     public void ActivateVisitOptionUI(int ID, VisitPlace visitPlace)
     {
+        Debug.Log("VisitOptionUI Event");
         OnActivateVisitOptionUI?.Invoke(ID, visitPlace);
     }
 

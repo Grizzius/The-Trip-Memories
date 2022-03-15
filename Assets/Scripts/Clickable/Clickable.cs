@@ -8,10 +8,11 @@ public class Clickable : MonoBehaviour
     public string outlineID;
     MeshRenderer meshRenderer;
     bool canBeClicked;
+    public StateCondition stateCondition;
 
     protected virtual void Start()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer = GetComponentInChildren<MeshRenderer>();
     }
     protected void OnMouseEnter()
     {
@@ -27,9 +28,27 @@ public class Clickable : MonoBehaviour
 
     protected void Update()
     {
-        if(Input.GetButtonDown("Fire1") && canBeClicked && PlayerStateMachine.state.GetType() == typeof(PlayerRoomState))
+        if(Input.GetButtonDown("Fire1") && canBeClicked)
         {
-            ClickedEvent();
+            switch (stateCondition)
+            {
+                case StateCondition.PlayerRoomState:
+                    Debug.Log("Default State");
+                    if(PlayerScript.state.GetType() == typeof(PlayerRoomState))
+                    {
+                        ClickedEvent();
+                    }
+                    break;
+
+                case StateCondition.ZoomInState:
+                    Debug.Log("ZoomIn State");
+                    if (PlayerScript.state.GetType() == typeof(PlayerStateZoom))
+                    {
+                        ClickedEvent();
+                    }
+                    break;
+            }
+            
         }
     }
 
@@ -42,4 +61,11 @@ public class Clickable : MonoBehaviour
     {
         meshRenderer?.material.SetFloat(outlineID, value);
     }
+}
+
+public enum StateCondition
+{
+    PlayerRoomState,
+    ZoomInState,
+    UIState
 }

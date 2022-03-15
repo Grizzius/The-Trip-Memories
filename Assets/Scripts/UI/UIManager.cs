@@ -5,45 +5,44 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public PlayerHouseUI roomUI;
-    public VisitOptionScript[] visitOptionScripts; 
+    public VisitOptionScript[] visitOptionScripts;
+    public ZoomInUI zoomInUI;
     public Canvas VisitUI;
+
+    public static UIManager current;
+    
 
     private void Start()
     {
-        roomUI.gameObject.SetActive(true);
+        current = this;
 
+        roomUI.gameObject.SetActive(true);
         foreach(VisitOptionScript option in visitOptionScripts)
         {
             option.gameObject.SetActive(false);
         }
+        zoomInUI.gameObject.SetActive(false);
 
         EventSystem.current.OnStartVisitMode += BeginVisitUI;
     }
 
-    public void ToggleUI(Canvas UI, bool enabled)
+    public void ToggleUI(Canvas UI, bool enabled, PlayerState newState)
     {
         UI.gameObject.SetActive(enabled);
 
         switch (enabled)
         {
             case true:
-                PlayerScript.SetState(new PlayerUIState(FindObjectOfType<PlayerScript>()));
+                PlayerScript.SetState(newState);
                 break;
             case false:
-                PlayerScript.SetState(new PlayerRoomState(FindObjectOfType<PlayerScript>()));
+                PlayerScript.SetState(newState);
                 break;
         }
     }
 
     public void BeginVisitUI(VisitPlace visit)
     {
-        ToggleUI(roomUI.transform.GetComponent<Canvas>(), false);
 
-        foreach (VisitOptionScript option in visitOptionScripts)
-        {
-            ToggleUI(option.transform.GetComponent<Canvas>(), false);
-        }
-
-        ToggleUI(VisitUI.transform.GetComponent<Canvas>(), true);
     }
 }
