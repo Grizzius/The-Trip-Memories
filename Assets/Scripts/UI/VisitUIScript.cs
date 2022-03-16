@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VisitUIScript : MonoBehaviour
+public class VisitUIScript : UIParentScript
 {
     Animator animator;
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         animator = GetComponent<Animator>();
         EventSystem.current.OnStartVisitMode += StartVisit;
     }

@@ -6,18 +6,23 @@ public class Clickable : MonoBehaviour
 {
     public int ID;
     public string outlineID;
-    MeshRenderer meshRenderer;
-    bool canBeClicked;
     public StateCondition stateCondition;
+
+    bool canBeClicked;
 
     protected virtual void Start()
     {
-        meshRenderer = GetComponentInChildren<MeshRenderer>();
+
     }
+
     protected void OnMouseEnter()
     {
-        canBeClicked = true;
-        ToggleOutline(1f);
+        if (StateCondictionCheck())
+        {
+            canBeClicked = true;
+            ToggleOutline(5f);
+        }
+        
     }
 
     protected void OnMouseExit()
@@ -30,26 +35,33 @@ public class Clickable : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1") && canBeClicked)
         {
-            switch (stateCondition)
+            if (StateCondictionCheck())
             {
-                case StateCondition.PlayerRoomState:
-                    Debug.Log("Default State");
-                    if(PlayerScript.state.GetType() == typeof(PlayerRoomState))
-                    {
-                        ClickedEvent();
-                    }
-                    break;
-
-                case StateCondition.ZoomInState:
-                    Debug.Log("ZoomIn State");
-                    if (PlayerScript.state.GetType() == typeof(PlayerStateZoom))
-                    {
-                        ClickedEvent();
-                    }
-                    break;
+                ClickedEvent();
             }
             
         }
+    }
+
+    bool StateCondictionCheck()
+    {
+        switch (stateCondition)
+        {
+            case StateCondition.PlayerRoomState:
+                if (PlayerScript.state.GetType() == typeof(PlayerRoomState))
+                {
+                    return true;
+                }
+                break;
+
+            case StateCondition.ZoomInState:
+                if (PlayerScript.state.GetType() == typeof(PlayerStateZoom))
+                {
+                    return true;
+                }
+                break;
+        }
+        return false;
     }
 
     protected virtual void ClickedEvent()
@@ -59,7 +71,7 @@ public class Clickable : MonoBehaviour
 
     private void ToggleOutline(float value)
     {
-        meshRenderer?.material.SetFloat(outlineID, value);
+
     }
 }
 

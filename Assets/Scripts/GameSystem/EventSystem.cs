@@ -32,20 +32,28 @@ public class EventSystem : MonoBehaviour
         OnEndVisitMode?.Invoke();
     }
 
-    public event Action<int> OnActivateUI;
-    
-    public void ActivateUI(int ID)
+    //======UI Events======//
+
+    public event Action<int> OnOpenUI;
+    public void OpenUI(int ID)
     {
-        OnActivateUI?.Invoke(ID);
+        OnOpenUI?.Invoke(ID);
+    }
+
+    public event Action<int> OnCloseUI;
+    public void CloseUI(int ID)
+    {
+        OnCloseUI?.Invoke(ID);
     }
 
     public event Action<int, VisitPlace> OnActivateVisitOptionUI;
-
     public void ActivateVisitOptionUI(int ID, VisitPlace visitPlace)
     {
         Debug.Log("VisitOptionUI Event");
         OnActivateVisitOptionUI?.Invoke(ID, visitPlace);
     }
+
+    //======Minigames Event======//
 
     public event Action OnPlaneCollision;
 

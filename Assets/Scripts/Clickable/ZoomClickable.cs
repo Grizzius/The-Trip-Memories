@@ -6,6 +6,7 @@ public class ZoomClickable : Clickable
 {
     int originPositionID;
     public int positionID;
+    public int UI_ID;
     public Quaternion camRotation;
 
     protected override void Start()
@@ -22,7 +23,8 @@ public class ZoomClickable : Clickable
         PlayerStateZoom.playerCamRotation = camRotation;
 
         ZoomInUI.zoomClickableScript = this;
-        UIManager.current.ToggleUI(ZoomInUI.current.GetComponent<Canvas>(), true, new PlayerStateZoom(PlayerScript.current));
+        EventSystem.current.OpenUI(UI_ID);
+        PlayerScript.SetState(new PlayerStateZoom(PlayerScript.current));
        
     }
 
@@ -30,6 +32,8 @@ public class ZoomClickable : Clickable
     {
         PlayerPositions.current.MovePlayer(originPositionID);
         PlayerScript.current.GetComponentInChildren<Camera>().transform.rotation = new Quaternion(0, 0, 0, 1);
-        UIManager.current.ToggleUI(ZoomInUI.current.GetComponent<Canvas>(), false, new PlayerRoomState(PlayerScript.current));
+
+        PlayerScript.SetState(new PlayerRoomState(PlayerScript.current));
+        EventSystem.current.CloseUI(UI_ID);
     }
 }

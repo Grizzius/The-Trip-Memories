@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class VisitOptionScript : MonoBehaviour
+public class VisitOptionScript : UIParentScript
 {
     public VisitPlace visit;
-    public int id;
 
     [Header("UI elements")]
     public Slider priceSlider;
@@ -47,8 +46,9 @@ public class VisitOptionScript : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         Initialize();
         EventSystem.current.OnActivateVisitOptionUI += OpenTab;
     }
@@ -77,21 +77,28 @@ public class VisitOptionScript : MonoBehaviour
         FunValueText.text = funValue.ToString();
     }
 
-    public void OpenTab(int ID, VisitPlace newVisit)
+    public void OpenTab(int id, VisitPlace newVisit)
     {
-        if(ID == id)
+        if(id == ID)
         {
             visit = newVisit;
-            Canvas canvas = GetComponent<Canvas>();
-            UIManager.ToggleUI(canvas, true, new PlayerUIState(PlayerScript.current));
+            EventSystem.current.OpenUI(ID);
             Initialize();
         }
-        
     }
 
     public void CloseTab()
     {
-        Canvas canvas = GetComponent<Canvas>();
-        UIManager.ToggleUI(canvas, false, new PlayerStateZoom(PlayerScript.current));
+        EventSystem.current.CloseUI(ID);
+    }
+
+    protected override void OnOpenTab()
+    {
+        PlayerScript.SetState(new PlayerUIState(PlayerScript.current));
+    }
+
+    protected override void OnCloseTab()
+    {
+        PlayerScript.SetState(new PlayerStateZoom(PlayerScript.current));
     }
 }

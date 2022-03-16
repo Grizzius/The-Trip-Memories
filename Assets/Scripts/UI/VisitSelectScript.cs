@@ -3,33 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VisitSelectScript : MonoBehaviour
+public class VisitSelectScript : UIParentScript
 {
     public Button closeButton;
     public VerticalLayoutGroup VisitListDisplay;
 
     public Canvas visitOptionUI;
 
-    Canvas self;
-
-    UIManager UIManager;
-
     LevelData levelData;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         levelData = FindObjectOfType<LevelData>();
-
-        self = GetComponentInParent<Canvas>();
-
-        UIManager = FindObjectOfType<UIManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void OpenTab()
@@ -56,6 +43,7 @@ public class VisitSelectScript : MonoBehaviour
 
     public void CloseTab()
     {
-        UIManager.ToggleUI(self, false, new PlayerStateZoom(PlayerScript.current));
+        EventSystem.current.CloseUI(ID);
+        //UIManager.ToggleUI(self, false, new PlayerStateZoom(PlayerScript.current));
     }
 }

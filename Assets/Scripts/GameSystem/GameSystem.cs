@@ -26,6 +26,7 @@ public class GameSystem : GameSystemStateMachine
         if (FirstLaunch)
         {
             date = startingDate;
+            PlayerHouseUI.current.UpdateDate();
             playerMoney = playerStartMoney;
             SetMode(new DefaultMode());
             planeMinigameParameter = defaultPlaneMinigameParameter;
@@ -33,8 +34,6 @@ public class GameSystem : GameSystemStateMachine
             FirstLaunch = false;
         }
     }
-
-    
 
     private void Update()
     {

@@ -10,35 +10,29 @@ public class UIManager : MonoBehaviour
     public Canvas VisitUI;
 
     public static UIManager current;
-    
 
     private void Start()
     {
         current = this;
 
-        roomUI.gameObject.SetActive(true);
-        foreach(VisitOptionScript option in visitOptionScripts)
+        roomUI.canvas.enabled = true;
+        foreach (VisitOptionScript option in visitOptionScripts)
         {
-            option.gameObject.SetActive(false);
+            option.canvas.enabled = false;
         }
-        zoomInUI.gameObject.SetActive(false);
+        zoomInUI.canvas.enabled = false;
 
         EventSystem.current.OnStartVisitMode += BeginVisitUI;
     }
 
-    public void ToggleUI(Canvas UI, bool enabled, PlayerState newState)
+    private void Update()
     {
-        UI.gameObject.SetActive(enabled);
+        
+    }
 
-        switch (enabled)
-        {
-            case true:
-                PlayerScript.SetState(newState);
-                break;
-            case false:
-                PlayerScript.SetState(newState);
-                break;
-        }
+    public void ToggleUI()
+    {
+        
     }
 
     public void BeginVisitUI(VisitPlace visit)
