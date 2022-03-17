@@ -345,7 +345,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 6549662909933274401}
   m_OnClick:
     m_PersistentCalls:
@@ -1182,7 +1182,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6205982092487560951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1212,8 +1212,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 979d26e2bea87ef45a0a7e15e0ef0795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 0
+  canvas: {fileID: 0}
   visit: {fileID: 11400000, guid: 7cd837a6bc9a7bf4fa885bb5258d154c, type: 2}
-  id: 0
   priceSlider: {fileID: 1309752837052321773}
   visitName: {fileID: 6575758219591588746}
   visitDescription: {fileID: 237482510970086897}
@@ -1578,8 +1579,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

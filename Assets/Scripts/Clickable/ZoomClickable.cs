@@ -34,6 +34,5 @@ public class ZoomClickable : Clickable
         PlayerScript.current.GetComponentInChildren<Camera>().transform.rotation = new Quaternion(0, 0, 0, 1);
 
         PlayerScript.SetState(new PlayerRoomState(PlayerScript.current));
-        EventSystem.current.CloseUI(UI_ID);
     }
 }

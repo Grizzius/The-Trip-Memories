@@ -11,8 +11,12 @@ public class GameSystem : GameSystemStateMachine
     public int playerStartPositionID;
 
     public static int playerMoney;
+    public static int playerLuck;
+    public static int playerKnowledge;
+
     public static bool FirstLaunch = true;
     public static Date date;
+
     public static GameSystem current;
 
     [Header("Minigame parameters")]
@@ -93,6 +97,8 @@ public class GameSystem : GameSystemStateMachine
                     break;
             }
         }
+
+        PlayerHouseUI.current.UpdateDate();
     }
 }
 

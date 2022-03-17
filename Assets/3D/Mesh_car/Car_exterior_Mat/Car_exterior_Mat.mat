@@ -106,7 +106,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Segmented: 1
-    - _ShnIntense: 0.02
+    - _ShnIntense: 0.032
     - _ShnOverlap: 0
     - _ShnRange: 0.1
     - _ShnSmooth: 0
@@ -114,7 +114,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Steps: 5
+    - _Steps: 5.1
     - _StpSmooth: 0
     - _Surface: 0
     - _UVSec: 0

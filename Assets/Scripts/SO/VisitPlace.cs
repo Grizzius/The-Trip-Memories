@@ -12,7 +12,7 @@ public class VisitPlace : ScriptableObject
     public int minPrice;
     public int maxPrice;
     public int DefaultFunValue;
-    public RandomEventData randomEventData;
+    public RandomEventData[] randomEventDatas;
 
     public void OnValidate()
     {

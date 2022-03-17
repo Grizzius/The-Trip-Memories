@@ -7,7 +7,7 @@ using TMPro;
 public class VisitOptionScript : UIParentScript
 {
     public VisitPlace visit;
-
+    
     [Header("UI elements")]
     public Slider priceSlider;
     public TextMeshProUGUI visitName;
@@ -15,13 +15,11 @@ public class VisitOptionScript : UIParentScript
     public TextMeshProUGUI priceText;
     public TextMeshProUGUI FunValueText;
     public Button confirmButton;
-
-    UIManager UIManager;
     
     int visitPrice;
     int funValue;
 
-    
+    public static VisitOptionScript current;
 
     private void OnValidate()
     {
@@ -30,7 +28,6 @@ public class VisitOptionScript : UIParentScript
 
     private void Initialize()
     {
-        UIManager = FindObjectOfType<UIManager>();
         funValue = visit.DefaultFunValue;
 
         FunValueText.text = funValue.ToString();
@@ -50,12 +47,19 @@ public class VisitOptionScript : UIParentScript
     {
         base.Start();
         Initialize();
+
         EventSystem.current.OnActivateVisitOptionUI += OpenTab;
+        current = this;
     }
 
     public void PressConfirmButton()
     {
+
+        VisitUIScript.visit = visit;
+        VisitUIScript.price = visitPrice;
         EventSystem.current.StartVisitMode(visit);
+
+        CloseTab();
     }
 
     public void UpdatePrice()
@@ -92,13 +96,21 @@ public class VisitOptionScript : UIParentScript
         EventSystem.current.CloseUI(ID);
     }
 
+    public void PressCloseButton()
+    {
+        PlayerScript.SetState(new PlayerStateZoom(PlayerScript.current));
+        ZoomInUI.current.ToggleButtonClickable(true);
+        CloseTab();
+    }
+
     protected override void OnOpenTab()
     {
         PlayerScript.SetState(new PlayerUIState(PlayerScript.current));
+        ZoomInUI.current.ToggleButtonClickable(false);
     }
 
     protected override void OnCloseTab()
     {
-        PlayerScript.SetState(new PlayerStateZoom(PlayerScript.current));
+        
     }
 }

@@ -1,10 +1,11 @@
 fileFormatVersion: 2
-guid: d7c27a188eaeaa4429cba9b7fad2c4f8
+guid: 5fea29bb7c508c244a1f805a5fd3fc4d
+timeCreated: 1522369084
+licenseType: Store
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - outlineMaterial: {fileID: 2100000, guid: 47ccc556e60c1af4ca71ee3df78fdbec, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

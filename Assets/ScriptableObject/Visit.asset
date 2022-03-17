@@ -17,6 +17,7 @@ MonoBehaviour:
   minPrice: 20
   maxPrice: 600
   DefaultFunValue: 8
-  randomEvents:
-  - randomEventData: {fileID: 11400000, guid: 9579657c68616904283436f9ed4ff7c5, type: 2}
-    probability: 50
+  randomEventDatas:
+  - {fileID: 11400000, guid: 9579657c68616904283436f9ed4ff7c5, type: 2}
+  - {fileID: 11400000, guid: 0ff404742b95a1242ac99cf39249c78a, type: 2}
+  - {fileID: 11400000, guid: ed645a13565d78740b562abb539a0e92, type: 2}
