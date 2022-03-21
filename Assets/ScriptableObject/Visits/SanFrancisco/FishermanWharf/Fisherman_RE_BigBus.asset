@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
-  m_Name: BigBuddha_RE_Neutral
+  m_Name: Fisherman_RE_BigBus
   m_EditorClassIdentifier: 
-  eventTitle: The Big Buddha
-  eventText: "Aujourd\u2019hui je suis allez voir le Big buddha, c\u2019est la plus
-    grande statue de bouddha assis et l\u2019une des 5 plus grandes statues de bouddha
-    en g\xE9n\xE9ral. Elle est plac\xE9e en hauteur, lorsque l\u2019on arrive sur
-    le site, elle est visible peu importe o\xF9 l'on se trouve."
-  moneyModifier: 0
+  eventTitle: Circuit Big Bus
+  eventText: "Si vous venez d'arriver dans la ville, le circuit en Big bus est une
+    exp\xE9rience \xE0 faire \xE0 tout prix ! Vous pouvez entrer dans le bus au Pier
+    39 afin de visiter San Francisco avec un guide et passer dans tous les lieux
+    iconique de la ville."
+  moneyModifier: -50
   luckModifier: 0
   knowledgeModifier: 0
-  memoryModifier: 22
+  memoryModifier: 15
   triggerModifiers: []
-  moneyCondition: 0
-  openDays: 00000000010000000200000003000000040000000500000006000000
+  moneyCondition: 50
+  openDays: 
   triggers: []
-  probabilityType: 1
+  probabilityType: 0
   curve:
     serializedVersion: 2
     m_Curve:

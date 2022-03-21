@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
-  m_Name: BigBuddha_RE_Neutral
+  m_Name: VictoriaPeak_RE_VRAutoZone
   m_EditorClassIdentifier: 
-  eventTitle: The Big Buddha
-  eventText: "Aujourd\u2019hui je suis allez voir le Big buddha, c\u2019est la plus
-    grande statue de bouddha assis et l\u2019une des 5 plus grandes statues de bouddha
-    en g\xE9n\xE9ral. Elle est plac\xE9e en hauteur, lorsque l\u2019on arrive sur
-    le site, elle est visible peu importe o\xF9 l'on se trouve."
-  moneyModifier: 0
+  eventTitle: VrAutoZone
+  eventText: "Au sommet de Victoria peak vous retrouvez plusieurs magasins, restaurants
+    et activit\xE9s diverses, j\u2019ai choisi une activit\xE9 originale pour tester
+    : La VR Auto Zone ! Vous voulez \xEAtre Spiderman ? Danser avec des sabres laser
+    ? Tir\xE9 sur des aliens enrag\xE9 ? Vous \xEAtes au bon endroit !"
+  moneyModifier: -40
   luckModifier: 0
   knowledgeModifier: 0
-  memoryModifier: 22
+  memoryModifier: 5
   triggerModifiers: []
-  moneyCondition: 0
-  openDays: 00000000010000000200000003000000040000000500000006000000
+  moneyCondition: 40
+  openDays: 000000000100000002000000040000000500000006000000
   triggers: []
-  probabilityType: 1
+  probabilityType: 0
   curve:
     serializedVersion: 2
     m_Curve:
