@@ -10,19 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
-  m_Name: BigBuddha_RE_Luck
+  m_Name: Fisherman_RE_Phoque
   m_EditorClassIdentifier: 
-  eventTitle: The Big Buddha
-  eventText: "Aujourd\u2019hui je suis allez voir la plus grandes statues de bouddha
-    assis du monde. Anecdote : Elle est entour\xE9 six statues de bronze sous le
-    nom de \u201CL\u2019offrande des six Devas\u201D, ces derni\xE8re symbolise les
-    six perfections : G\xE9n\xE9rosit\xE9, Moralit\xE9, Patience, Z\xE8le, m\xE9ditation
-    et sagesse qui sont toutes n\xE9c\xE9ssaire \xE0 l\u2019illumination."
+  eventTitle: Phoque
+  eventText: "Allez voir le quai 39, une partie de la ville tr\xE8s sympa est anim\xE9e,
+    on peut m\xEAme si vous avez de la chance observer des phoques se pr\xE9lasser
+    au bord de l\u2019eau. Un local m\u2019a dit qu' en 2005 il y avait plus de 500
+    phoques qui se trouvaient i\xE7i tous les jours mais malheureusement ils ont
+    d\xFB plier bagage bien que j\u2019en ai vu une dizaine."
   moneyModifier: 0
   luckModifier: 0
   knowledgeModifier: 0
-  memoryModifier: 30
-  triggerModifiers: []
+  memoryModifier: 15
+  triggerModifiers:
+  - value: 1
+    ID: 27
   moneyCondition: 0
   openDays: 00000000010000000200000003000000040000000500000006000000
   triggers: []
@@ -31,10 +33,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.0083351135
-      value: 0.95047
-      inSlope: 0.049946338
-      outSlope: 0.049946338
+      time: 0.0041656494
+      value: 0.5
+      inSlope: 0.5020915
+      outSlope: 0.5020915
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
@@ -42,8 +44,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.049946338
-      outSlope: 0.049946338
+      inSlope: 0.5020915
+      outSlope: 0.5020915
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334

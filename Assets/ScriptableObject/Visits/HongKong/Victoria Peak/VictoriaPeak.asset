@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f3216be743cd3449840a2ca9aabcc4, type: 3}
+  m_Name: VictoriaPeak
+  m_EditorClassIdentifier: 
+  visitName: Victoria Peak
+  VisitDescription: Quartier de hong kong le plus haut du monde avec ces buildings
+    immense.
+  minPrice: 0
+  maxPrice: 100
+  DefaultFunValue: 0
+  randomEventDatas:
+  - {fileID: 11400000, guid: 7cd12a3ccf2437a4499adc03d757f157, type: 2}
+  - {fileID: 11400000, guid: d13d240c431ed314ea485da167fef1e4, type: 2}
+  - {fileID: 11400000, guid: b3c6f73f996410445b4334a29da6de0a, type: 2}
+  - {fileID: 11400000, guid: 394cca234e2d7e748ad8782752de69c9, type: 2}
+  - {fileID: 11400000, guid: 55d115d7a8aa4954e9a10fa5df954673, type: 2}
+  - {fileID: 11400000, guid: 739e8f57e1f7a9349a14da3384efecaa, type: 2}
+  - {fileID: 11400000, guid: 03c323a3bfb633f4dbd0cb40c91b1337, type: 2}
+  visitType: 1

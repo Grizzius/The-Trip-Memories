@@ -10,43 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
-  m_Name: BigBuddha_RE_Luck
+  m_Name: VictoriaPeak_RE_Galerie
   m_EditorClassIdentifier: 
-  eventTitle: The Big Buddha
-  eventText: "Aujourd\u2019hui je suis allez voir la plus grandes statues de bouddha
-    assis du monde. Anecdote : Elle est entour\xE9 six statues de bronze sous le
-    nom de \u201CL\u2019offrande des six Devas\u201D, ces derni\xE8re symbolise les
-    six perfections : G\xE9n\xE9rosit\xE9, Moralit\xE9, Patience, Z\xE8le, m\xE9ditation
-    et sagesse qui sont toutes n\xE9c\xE9ssaire \xE0 l\u2019illumination."
+  eventTitle: GalerieHistorique
+  eventText: "Une visite gratuite \xE0 faire : La galerie historique du Peak Tram
+    ! A la fin de la ligne vous trouverez l'entr\xE9e, qui replonge les visiteurs
+    en plein 19\xE8me si\xE8cle. De la premi\xE8re version du peak tram \xE0 l'\xE9poque
+    actuelle. J\u2019ai trouv\xE9 \xE7a impressionnant de voir l\u2019\xE9volution
+    technologique de plus de 124 ans de changement !"
   moneyModifier: 0
   luckModifier: 0
-  knowledgeModifier: 0
-  memoryModifier: 30
+  knowledgeModifier: 3
+  memoryModifier: 8
   triggerModifiers: []
   moneyCondition: 0
   openDays: 00000000010000000200000003000000040000000500000006000000
   triggers: []
-  probabilityType: 1
+  probabilityType: 0
   curve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.0083351135
-      value: 0.95047
-      inSlope: 0.049946338
-      outSlope: 0.049946338
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.049946338
-      outSlope: 0.049946338
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

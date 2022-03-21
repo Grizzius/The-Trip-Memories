@@ -10,20 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
-  m_Name: BigBuddha_RE_Luck
+  m_Name: GoldenGate_RE_Chance
   m_EditorClassIdentifier: 
-  eventTitle: The Big Buddha
-  eventText: "Aujourd\u2019hui je suis allez voir la plus grandes statues de bouddha
-    assis du monde. Anecdote : Elle est entour\xE9 six statues de bronze sous le
-    nom de \u201CL\u2019offrande des six Devas\u201D, ces derni\xE8re symbolise les
-    six perfections : G\xE9n\xE9rosit\xE9, Moralit\xE9, Patience, Z\xE8le, m\xE9ditation
-    et sagesse qui sont toutes n\xE9c\xE9ssaire \xE0 l\u2019illumination."
-  moneyModifier: 0
+  eventTitle: GoldenGate
+  eventText: "J\u2019ai bien fait de venir en fin de journ\xE9e. D\xE9tail technique
+    : Avec un \xE9clairage de 128 lampes sur la route et 12 lampes d\xE9coratives
+    sur chaque pilier, le pont de nuit est vachement \xE9clair\xE9 avec des couleurs
+    orang\xE9. Bon plan : L\u2019angle parfait pour avoir une vue d\u2019ensemble
+    est la Marshall\u2019s beach, je vous conseille la nuit pour voir le couch\xE9
+    de soleil de cette plage."
+  moneyModifier: -11
   luckModifier: 0
   knowledgeModifier: 0
   memoryModifier: 30
   triggerModifiers: []
-  moneyCondition: 0
+  moneyCondition: 11
   openDays: 00000000010000000200000003000000040000000500000006000000
   triggers: []
   probabilityType: 1
@@ -31,10 +32,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.0083351135
-      value: 0.95047
-      inSlope: 0.049946338
-      outSlope: 0.049946338
+      time: 0.012500763
+      value: 0.9502411
+      inSlope: 0.05038881
+      outSlope: 0.05038881
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
@@ -42,8 +43,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.049946338
-      outSlope: 0.049946338
+      inSlope: 0.05038881
+      outSlope: 0.05038881
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
