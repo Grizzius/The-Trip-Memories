@@ -22,6 +22,8 @@ public class PlaneMinigame : MiniGameGameMode
 
     string nextSceneName;
 
+    public static PlaneMinigame current;
+
     public PlaneMinigame(string NextSceneName)
     {
         nextSceneName = NextSceneName;
@@ -29,16 +31,17 @@ public class PlaneMinigame : MiniGameGameMode
 
     public override void Start()
     {
+        current = this;
         timer = GameSystem.planeMinigameParameter.duration;
         initialDelay = GameSystem.planeMinigameParameter.initialSpawnDelay;
+
         EventSystem.current.OnPlaneCollision += IncreaseCollisionCount;
+        EventSystem.current.OnStartPlaneMiniGame += StartSpawnPlane;
 
         gameSystem = Object.FindObjectOfType<GameSystem>();
         parameter = GameSystem.planeMinigameParameter;
 
         player = Object.FindObjectOfType<PlaneController>();
-
-        StartSpawnPlane();
     }
 
     public override void Update()
@@ -46,12 +49,6 @@ public class PlaneMinigame : MiniGameGameMode
         if (player == null)
         {
             player = Object.FindObjectOfType<PlaneController>();
-        }
-
-        if (gameSystem == null)
-        {
-            gameSystem = Object.FindObjectOfType<GameSystem>();
-            StartSpawnPlane();
         }
 
         if(timer == -15)
@@ -69,6 +66,7 @@ public class PlaneMinigame : MiniGameGameMode
 
     void StartSpawnPlane()
     {
+        timer = 90;
         gameSystem?.StartCoroutine(SpawnPlane());
     }
 

@@ -18,10 +18,10 @@ public class PlaneMinigameUI : MonoBehaviour
 
         planeMinigame = (PlaneMinigame)GameSystem.gameMode;
 
-        StartCoroutine(Timer());
         chronoText.text = planeMinigame.timer.ToString();
 
         EventSystem.current.OnPlaneCollision += UpdateCollision;
+        EventSystem.current.OnStartPlaneMiniGame += StartTimer;
 
         UpdateCollision();
     }
@@ -30,6 +30,11 @@ public class PlaneMinigameUI : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void StartTimer()
+    {
+        StartCoroutine(Timer());
     }
 
     public void UpdateCollision()

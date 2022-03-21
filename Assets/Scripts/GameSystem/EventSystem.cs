@@ -88,4 +88,11 @@ public class EventSystem : MonoBehaviour
     {
         OnPlaneCollision?.Invoke();
     }
+
+    public event Action OnStartPlaneMiniGame;
+
+    public void StartPlaneMiniGame()
+    {
+        OnStartPlaneMiniGame?.Invoke();
+    }
 }
