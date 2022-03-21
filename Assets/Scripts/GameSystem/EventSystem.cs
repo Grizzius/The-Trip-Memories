@@ -38,8 +38,10 @@ public class EventSystem : MonoBehaviour
     public event Action<int> OnOpenUI;
     public void OpenUI(int ID)
     {
+        print(PlayerScript.state.GetType());
         if(PlayerScript.state.GetType() != typeof(PlayerUIState))
         {
+            print("Ouvre l'UI d'ID " + ID.ToString());
             OnOpenUI?.Invoke(ID);
         }
     }

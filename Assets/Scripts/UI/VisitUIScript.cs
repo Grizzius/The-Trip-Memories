@@ -57,8 +57,9 @@ public class VisitUIScript : UIParentScript
             }
 
             yield return new WaitForSeconds(2f);
-
-            EventSystem.current.OpenUI(randomEventUI_ID);
+            PlayerScript.SetState(new PlayerRoomState(PlayerScript.current));
+            print("Ca marche jusque là");
+            OpenRandomEventUI();
         }
         else
         {
@@ -66,6 +67,12 @@ public class VisitUIScript : UIParentScript
             EndVisit();
         }
         
+    }
+
+    void OpenRandomEventUI()
+    {
+        print("Open Random Event UI");
+        EventSystem.current.OpenUI(randomEventUI_ID);
     }
 
     void EndVisit()

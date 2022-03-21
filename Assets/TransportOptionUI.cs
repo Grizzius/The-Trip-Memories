@@ -33,15 +33,11 @@ public class TransportOptionUI : UIParentScript
         transportNameText.text = voyage.transportType.ToString();
     }
 
-    private void Update()
-    {
-        UpdateUI();
-    }
-
     Date CalculateArrivalDate()
     {
         Date currentDate = new Date();
 
+        print(GameSystem.date);
         currentDate.monthDay = GameSystem.date.monthDay;
         currentDate.month = GameSystem.date.month;
         currentDate.weekDay = GameSystem.date.weekDay;
