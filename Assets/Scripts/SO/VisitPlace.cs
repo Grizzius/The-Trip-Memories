@@ -13,6 +13,7 @@ public class VisitPlace : ScriptableObject
     public int maxPrice;
     public int DefaultFunValue;
     public RandomEventData[] randomEventDatas;
+    public VisitType visitType;
 
     public void OnValidate()
     {
@@ -25,4 +26,10 @@ public class VisitPlace : ScriptableObject
             maxPrice = minPrice;
         }
     }
+}
+
+public enum VisitType
+{
+    Hiking,
+    Monument,
 }

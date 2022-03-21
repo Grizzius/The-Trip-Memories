@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     public VisitOptionScript[] visitOptionScripts;
     public ZoomInUI zoomInUI;
     public Canvas VisitUI;
+    public RandomEventUI randomEventUI;
+    public JobOfferUIScript JobOfferUI;
 
     public static UIManager current;
 
@@ -21,6 +23,8 @@ public class UIManager : MonoBehaviour
             option.canvas.enabled = false;
         }
         zoomInUI.canvas.enabled = false;
+        randomEventUI.canvas.enabled = false;
+        JobOfferUI.canvas.enabled = false;
 
         EventSystem.current.OnStartVisitMode += BeginVisitUI;
     }

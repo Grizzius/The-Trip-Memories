@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
   m_Name: Random Event data 1
   m_EditorClassIdentifier: 
-  eventTitle: 
+  eventTitle: Oursed
   eventText: "Goum\xE9 par un ours"
   moneyModifier: 0
   luckModifier: 0
   knowledgeModifier: 0
+  memoryModifier: 0
+  triggerModifiers: []
   moneyCondition: 0
   openDays: 0000000001000000
   triggers: []

@@ -19,6 +19,7 @@ public class EventSystem : MonoBehaviour
         
     }
 
+    //======Visit Events======//
     public event Action<VisitPlace> OnStartVisitMode;
     public void StartVisitMode(VisitPlace visitPlace)
     {
@@ -37,7 +38,10 @@ public class EventSystem : MonoBehaviour
     public event Action<int> OnOpenUI;
     public void OpenUI(int ID)
     {
-        OnOpenUI?.Invoke(ID);
+        if(PlayerScript.state.GetType() != typeof(PlayerUIState))
+        {
+            OnOpenUI?.Invoke(ID);
+        }
     }
 
     public event Action<int> OnCloseUI;
@@ -49,8 +53,29 @@ public class EventSystem : MonoBehaviour
     public event Action<int, VisitPlace> OnActivateVisitOptionUI;
     public void ActivateVisitOptionUI(int ID, VisitPlace visitPlace)
     {
-        Debug.Log("VisitOptionUI Event");
         OnActivateVisitOptionUI?.Invoke(ID, visitPlace);
+    }
+
+    public event Action<int, Jobs> OnActivateJobOfferUI;
+
+    public void ActivateJobOfferUI(int ID, Jobs job)
+    {
+        OnActivateJobOfferUI?.Invoke(ID, job);
+    }
+
+    public event Action OnCloseRandomEventTab;
+
+    public void CloseRandomEventTab()
+    {
+        OnCloseRandomEventTab?.Invoke();
+    }
+
+    //======Appart Events======//
+    public event Action OnAdvanceDate;
+
+    public void AdvanceDate()
+    {
+        OnAdvanceDate?.Invoke();
     }
 
     //======Minigames Event======//

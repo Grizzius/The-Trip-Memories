@@ -17,6 +17,7 @@ public class Door : Clickable
 
     protected override void ClickedEvent()
     {
+        base.ClickedEvent();
         if (DefaultMode.playerPositionID == position1ID)
         {
             PlayerPositions.current.MovePlayer(position2ID);

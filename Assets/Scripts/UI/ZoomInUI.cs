@@ -35,6 +35,12 @@ public class ZoomInUI : UIParentScript
         
     }
 
+    protected override void OnOpenTab()
+    {
+        base.OnOpenTab();
+        ToggleButtonClickable(true);
+    }
+
     public void ToggleButtonClickable(bool active)
     {
         button.enabled = active;

@@ -12,6 +12,9 @@ public class RandomEventData : ScriptableObject
     public int moneyModifier;
     public int luckModifier;
     public int knowledgeModifier;
+    public int memoryModifier;
+
+    public TriggerModifier[] triggerModifiers;
 
     [Header("Conditions")]
     public int moneyCondition;
@@ -39,12 +42,12 @@ public enum EventTriggerType
 public class Trigger
 {
     public EventTriggerType triggerType;
-    public string triggerName;
+    public int triggerID;
 }
 
 [System.Serializable]
-public class EventTrigger 
+public class TriggerModifier
 {
-    public string triggerName;
-    public bool triggerState;
+    public bool value;
+    public int ID;
 }

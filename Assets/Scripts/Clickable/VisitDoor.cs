@@ -12,6 +12,7 @@ public class VisitDoor : Clickable
     }
     protected override void ClickedEvent()
     {
+        ToggleOutline(0f);
         EventSystem.current.ActivateVisitOptionUI(ID, visit);
     }
 }

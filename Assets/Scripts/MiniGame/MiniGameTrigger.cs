@@ -9,7 +9,7 @@ public class MiniGameTrigger : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            GameSystem.ChangeScene(3, new MiniGameGameMode());
+            GameSystem.ChangeScene("Test Scene", new MiniGameGameMode());
         }
     }
 }

@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Outline))]
 public class Clickable : MonoBehaviour
 {
+    [Tooltip("Le numéro d'ID doit être le même que l'objet activé par le clic")]
     public int ID;
-    public string outlineID;
     public StateCondition stateCondition;
 
     bool canBeClicked;
 
+    Outline outline;
+
     protected virtual void Start()
     {
-
+        outline = GetComponent<Outline>();
+        outline.enabled = false;
     }
 
     protected void OnMouseEnter()
@@ -66,12 +70,20 @@ public class Clickable : MonoBehaviour
 
     protected virtual void ClickedEvent()
     {
-
+        ToggleOutline(0f);
     }
 
-    private void ToggleOutline(float value)
+    protected void ToggleOutline(float value)
     {
-
+        if(value != 0)
+        {
+            outline.enabled = true;
+            outline.OutlineWidth = value;
+        }
+        else
+        {
+            outline.enabled = false;
+        }
     }
 }
 

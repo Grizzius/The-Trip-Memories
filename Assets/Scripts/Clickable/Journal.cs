@@ -6,6 +6,7 @@ public class Journal : Clickable
 {
     protected override void ClickedEvent()
     {
-        GameSystem.ChangeScene(2, new PlaneMinigame());
+        base.ClickedEvent();
+        EventSystem.current.OpenUI(ID);
     }
 }

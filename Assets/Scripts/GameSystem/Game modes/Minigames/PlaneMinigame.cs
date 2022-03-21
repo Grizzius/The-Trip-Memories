@@ -20,6 +20,13 @@ public class PlaneMinigame : MiniGameGameMode
 
     public int collisionCount = 0;
 
+    string nextSceneName;
+
+    public PlaneMinigame(string NextSceneName)
+    {
+        nextSceneName = NextSceneName;
+    }
+
     public override void Start()
     {
         timer = GameSystem.planeMinigameParameter.duration;
@@ -50,7 +57,7 @@ public class PlaneMinigame : MiniGameGameMode
 
         if(timer == -15)
         {
-            GameSystem.ChangeScene(0, new DefaultMode());
+            GameSystem.ChangeScene(nextSceneName, new DefaultMode());
         }
     }
 

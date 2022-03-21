@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
   m_Name: Random Event data
   m_EditorClassIdentifier: 
-  eventTitle: Random event
-  eventText: A random event happened !
-  moneyModifier: 5
+  eventTitle: ornithorynqued
+  eventText: "Goumm\xE9 par un ornithorynque"
+  moneyModifier: 0
   luckModifier: 0
   knowledgeModifier: 0
   moneyCondition: 0
-  openDays: 0000000002000000
+  openDays: 000000000200000003000000040000000500000006000000
   triggers:
   - triggerType: 0
     triggerName: 

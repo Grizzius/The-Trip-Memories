@@ -5,6 +5,7 @@ using UnityEngine;
 public class VisitUIScript : UIParentScript
 {
     Animator animator;
+    public int randomEventUI_ID;
     public static VisitPlace visit;
     public static VisitUIScript current;
     public static int price;
@@ -17,7 +18,7 @@ public class VisitUIScript : UIParentScript
         animator = GetComponent<Animator>();
         canvas = GetComponent<Canvas>();
         EventSystem.current.OnStartVisitMode += StartVisit;
-        EventSystem.current.OnEndVisitMode += EndVisit;
+        EventSystem.current.OnCloseRandomEventTab += EndVisit;
     }
 
     public void TriggerAnim(string trigger)
@@ -31,6 +32,7 @@ public class VisitUIScript : UIParentScript
         TriggerAnim("FadeIn");
         Debug.Log("Start visit");
         ZoomInUI.current.CloseTab();
+        canvas.enabled = true;
 
         StartCoroutine(VisitCoroutine());
     }
@@ -38,15 +40,32 @@ public class VisitUIScript : UIParentScript
     IEnumerator VisitCoroutine()
     {
         RandomEventData randomEvent = ChooseRandomEvent();
+        if(randomEvent != null)
+        {
+            Debug.Log(randomEvent.eventTitle);
 
-        Debug.Log(randomEvent.eventText);
+            RandomEventUI.current.randomEvent = randomEvent;
 
-        canvas.enabled = true;
-        Debug.Log("Visit Coroutine");
+            //Apply random event modifiers
+            GameSystem.playerMoney += randomEvent.moneyModifier;
+            GameSystem.playerLuck += randomEvent.luckModifier;
+            GameSystem.playerKnowledge += randomEvent.knowledgeModifier;
 
+            foreach(TriggerModifier modifier in randomEvent.triggerModifiers)
+            {
+                GameSystem.EventTriggers[modifier.ID] = modifier.value;
+            }
 
-        yield return new WaitForSeconds(5f);
-        EventSystem.current.EndVisitMode();
+            yield return new WaitForSeconds(2f);
+
+            EventSystem.current.OpenUI(randomEventUI_ID);
+        }
+        else
+        {
+            yield return new WaitForSeconds(2f);
+            EndVisit();
+        }
+        
     }
 
     void EndVisit()
@@ -61,6 +80,7 @@ public class VisitUIScript : UIParentScript
 
     IEnumerator EndVisitCoroutine()
     {
+        EventSystem.current.EndVisitMode();
         TriggerAnim("FadeOut");
         yield return new WaitForSeconds(1f);
         canvas.enabled = false;
@@ -109,9 +129,25 @@ public class VisitUIScript : UIParentScript
 
     bool IsRandomEventAvailable(RandomEventData randomEvent)
     {
-        //Vérifie condition d'argent
-        if(price <= randomEvent.moneyCondition)
+        //Vérifie les conditions de trigger
+        foreach(Trigger trigger in randomEvent.triggers)
         {
+            if (GameSystem.EventTriggers[trigger.triggerID])
+            {
+                switch (trigger.triggerType)
+                {
+                    case EventTriggerType.Cancels:
+                        return false;
+                    case EventTriggerType.Necessary:
+                        break;
+                }
+            }
+            
+        }
+        //Vérifie condition d'argent
+        if(price < randomEvent.moneyCondition)
+        {
+            
             return false;
         }
 

@@ -10,12 +10,14 @@ public class GameSystem : GameSystemStateMachine
     public Date startingDate;
     public int playerStartPositionID;
 
+    public static bool[] EventTriggers = new bool[256];
     public static int playerMoney;
     public static int playerLuck;
     public static int playerKnowledge;
 
     public static bool FirstLaunch = true;
     public static Date date;
+    public static Jobs playerJob;
 
     public static GameSystem current;
 
@@ -35,6 +37,11 @@ public class GameSystem : GameSystemStateMachine
             SetMode(new DefaultMode());
             planeMinigameParameter = defaultPlaneMinigameParameter;
 
+            for(int i = 0; i < EventTriggers.Length; i++)
+            {
+                EventTriggers[i] = false;
+            }
+
             FirstLaunch = false;
         }
     }
@@ -44,61 +51,22 @@ public class GameSystem : GameSystemStateMachine
         gameMode.Update();
     }
 
-    public static void ChangeScene(int sceneID, GameMode gameMode)
+    public static void ChangeScene(string SceneName, GameMode gameMode)
     {
         SetMode(gameMode);
-        SceneManager.LoadScene(sceneID);
+        SceneManager.LoadScene(SceneName);
     }
 
     public static void AddDay(int dayNumber)
     {
-        for(int i = 0; i < dayNumber; i++)
-        {
-            switch (date.weekDay)
-            {
-                case Day.Dimanche:
-                    date.weekDay = Day.Lundi;
-                    break;
-                default :
-                    date.weekDay++;
-                    break;
-            }
-
-            date.monthDay++;
-            switch (date.monthDay)
-            {
-                case 32:
-                    if (date.month == Month.Janvier || date.month == Month.Mars || date.month == Month.Mai || date.month == Month.Juillet || date.month == Month.Aout || date.month == Month.Octobre || date.month == Month.Decembre)
-                    {
-                        if(date.month != Month.Decembre)
-                        {
-                            date.month++;
-                        }
-                        else
-                        {
-                            date.month = Month.Janvier;
-                        }
-                        date.monthDay = 1;
-                    }
-                    break;
-                case 31:
-                    if (date.month == Month.Avril || date.month == Month.Juin || date.month == Month.Septembre || date.month == Month.Novembre)
-                    {
-                        date.month++;
-                        date.monthDay = 1;
-                    }
-                    break;
-                case 29:
-                    if(date.month == Month.Février)
-                    {
-                        date.month++;
-                        date.monthDay = 1;
-                    }
-                    break;
-            }
-        }
-
+        date.AddDay(dayNumber);
         PlayerHouseUI.current.UpdateDate();
+        EventSystem.current.AdvanceDate();
+    }
+
+    public void UpdateJob(Jobs newJob)
+    {
+        playerJob = newJob;
     }
 }
 
@@ -109,6 +77,55 @@ public class Date
     [Range(1,31)]
     public int monthDay;
     public Month month;
+
+    public void AddDay(int dayNumber)
+    {
+        for (int i = 0; i < dayNumber; i++)
+        {
+            switch (weekDay)
+            {
+                case Day.Dimanche:
+                    weekDay = Day.Lundi;
+                    break;
+                default:
+                    weekDay++;
+                    break;
+            }
+
+            monthDay++;
+            switch (monthDay)
+            {
+                case 32:
+                    if (month == Month.Janvier || month == Month.Mars || month == Month.Mai || month == Month.Juillet || month == Month.Aout || month == Month.Octobre || month == Month.Decembre)
+                    {
+                        if (month != Month.Decembre)
+                        {
+                            month++;
+                        }
+                        else
+                        {
+                            month = Month.Janvier;
+                        }
+                        monthDay = 1;
+                    }
+                    break;
+                case 31:
+                    if (month == Month.Avril || month == Month.Juin || month == Month.Septembre || month == Month.Novembre)
+                    {
+                        month++;
+                        monthDay = 1;
+                    }
+                    break;
+                case 29:
+                    if (month == Month.Février)
+                    {
+                        month++;
+                        monthDay = 1;
+                    }
+                    break;
+            }
+        }
+    }
 }
 
 public enum Day

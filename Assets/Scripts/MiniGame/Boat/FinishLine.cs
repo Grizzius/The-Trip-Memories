@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class FinishLine : MonoBehaviour
 {
     
-    public int nextSceneID;
+    public string nextSceneName;
 
     private void Start()
     {
@@ -17,7 +17,7 @@ public class FinishLine : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            GameSystem.ChangeScene(nextSceneID, new DefaultMode());
+            GameSystem.ChangeScene(nextSceneName, new DefaultMode());
         }
     }
 }

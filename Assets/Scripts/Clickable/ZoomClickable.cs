@@ -17,6 +17,7 @@ public class ZoomClickable : Clickable
 
     protected override void ClickedEvent()
     {
+        base.ClickedEvent();
         originPositionID = DefaultMode.playerPositionID;
 
         PlayerPositions.current.MovePlayer(positionID);

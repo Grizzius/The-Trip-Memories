@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f3216be743cd3449840a2ca9aabcc4, type: 3}
+  m_Name: TheBigBuddha
+  m_EditorClassIdentifier: 
+  visitName: The Big Buddha
+  VisitDescription: Big bronze boi
+  minPrice: 0
+  maxPrice: 100
+  DefaultFunValue: 0
+  randomEventDatas:
+  - {fileID: 11400000, guid: db6d26118110d624a85aab00583a4bfd, type: 2}
+  - {fileID: 11400000, guid: 76ebfa6dbf74de4469cb326ce7e8c95c, type: 2}
+  visitType: 1

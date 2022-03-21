@@ -43,7 +43,11 @@ public class PlayerPositions : MonoBehaviour
         else
         {
             PlayerScript playerScript = FindObjectOfType<PlayerScript>();
-            playerScript.transform.position = vector3;
+            if (playerScript)
+            {
+                playerScript.transform.position = vector3;
+            }
+            
         }
         
         DefaultMode.playerPositionID = positionID;
