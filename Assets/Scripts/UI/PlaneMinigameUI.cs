@@ -7,10 +7,15 @@ public class PlaneMinigameUI : MonoBehaviour
 {
     public TextMeshProUGUI chronoText;
     public TextMeshProUGUI CollisionsCountText;
+
+    public static PlaneMinigameUI current;
+
     PlaneMinigame planeMinigame;
     // Start is called before the first frame update
     void Start()
     {
+        current = this;
+
         planeMinigame = (PlaneMinigame)GameSystem.gameMode;
 
         StartCoroutine(Timer());
@@ -27,7 +32,7 @@ public class PlaneMinigameUI : MonoBehaviour
         
     }
 
-    void UpdateCollision()
+    public void UpdateCollision()
     {
         CollisionsCountText.text = ("Collisions : " + planeMinigame.collisionCount);
     }

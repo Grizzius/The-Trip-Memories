@@ -31,6 +31,7 @@ public class PlaneMinigame : MiniGameGameMode
     {
         timer = GameSystem.planeMinigameParameter.duration;
         initialDelay = GameSystem.planeMinigameParameter.initialSpawnDelay;
+        EventSystem.current.OnPlaneCollision += IncreaseCollisionCount;
 
         gameSystem = Object.FindObjectOfType<GameSystem>();
         parameter = GameSystem.planeMinigameParameter;
@@ -38,8 +39,6 @@ public class PlaneMinigame : MiniGameGameMode
         player = Object.FindObjectOfType<PlaneController>();
 
         StartSpawnPlane();
-
-        EventSystem.current.OnPlaneCollision += IncreaseCollisionCount;
     }
 
     public override void Update()
@@ -63,7 +62,9 @@ public class PlaneMinigame : MiniGameGameMode
 
     public void IncreaseCollisionCount()
     {
+        Debug.Log("Collision");
         collisionCount++;
+        PlaneMinigameUI.current.UpdateCollision();
     }
 
     void StartSpawnPlane()
@@ -79,7 +80,6 @@ public class PlaneMinigame : MiniGameGameMode
             {
                 //Choisi de spawn un avion ou une montgolfière
                 int spawnIndex = Random.Range(0, 10);
-
                 
                 if (spawnIndex < spawnIndexthreshold)
                 {
@@ -99,9 +99,9 @@ public class PlaneMinigame : MiniGameGameMode
 
                     newMontgolfière.transform.position = new Vector3(20, Random.Range(-3,3), 0);
 
-                    newMontgolfière.movementIntensity = Random.Range(1f, 5f);
+                    newMontgolfière.movementIntensity = Random.Range(1f + (4f/timer), 5f);
 
-                    newMontgolfière.speed = Random.Range(1f, 8f);
+                    newMontgolfière.speed = Random.Range(3f, 8f);
                 }
             }
 

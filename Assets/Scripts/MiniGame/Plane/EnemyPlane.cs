@@ -20,7 +20,7 @@ public class EnemyPlane : MonoBehaviour
         transform.position += new Vector3(normalizedDirection.x, normalizedDirection.y, 0) * speed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         PlaneController player = other.transform.GetComponent<PlaneController>();
         player.TakeDamage();

@@ -44,6 +44,7 @@ public class GameSystem : GameSystemStateMachine
 
             FirstLaunch = false;
         }
+        gameMode.Start();
     }
 
     private void Update()
