@@ -8,7 +8,7 @@ public class CarMinigame : MiniGameGameMode
     public static CarMinigame current;
     string nextSceneName;
     public int collisionCount;
-    public int timer;
+    public int timer = 90;
 
     public CarMinigame(string NextSceneName)
     {
@@ -32,6 +32,7 @@ public class CarMinigame : MiniGameGameMode
 
     void StartMiniGame()
     {
+        Debug.Log("Start minigame");
         gameSystem.StartCoroutine(Timer());
     }
 
@@ -47,5 +48,7 @@ public class CarMinigame : MiniGameGameMode
             yield return new WaitForSeconds(1);
             timer--;
         }
+
+        GameSystem.ChangeScene(nextSceneName, new DefaultMode());
     }
 }

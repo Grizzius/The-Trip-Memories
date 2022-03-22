@@ -34,7 +34,8 @@ public class CarSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(curve.Evaluate(curve.length), curve.Evaluate(curve.length/2f)));
+            CarMinigame carMinigame = (CarMinigame)GameSystem.gameMode;
+            yield return new WaitForSeconds(Random.Range(0.2f, 0.2f + curve.Evaluate(1f - carMinigame.timer / 90f)));
             SpawnCar();
         }
     }

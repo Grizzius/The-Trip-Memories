@@ -29,6 +29,7 @@ public class MinigameIntroUI : UIParentScript
 
     void UpdateText()
     {
+
     }
 
     void CloseUI()
@@ -38,6 +39,7 @@ public class MinigameIntroUI : UIParentScript
 
     public void OnButtonClick()
     {
-        
+        EventSystem.current.StartCarMiniGame();
+        EventSystem.current.StartPlaneMiniGame();
     }
 }
