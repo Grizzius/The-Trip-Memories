@@ -21,10 +21,14 @@ MonoBehaviour:
   luckModifier: 0
   knowledgeModifier: 0
   memoryModifier: 8
-  triggerModifiers: []
+  triggerModifiers:
+  - value: 1
+    ID: 38
   moneyCondition: 13
   openDays: 00000000010000000200000003000000040000000500000006000000
-  triggers: []
+  triggers:
+  - triggerType: 0
+    triggerID: 38
   probabilityType: 0
   curve:
     serializedVersion: 2
