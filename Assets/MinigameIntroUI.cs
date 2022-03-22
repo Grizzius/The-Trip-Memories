@@ -16,12 +16,19 @@ public class MinigameIntroUI : UIParentScript
         base.Start();
         current = this;
         EventSystem.current.OnStartPlaneMiniGame += CloseUI;
+        EventSystem.current.OnStartCarMiniGame += CloseUI;
+
+        UpdateText();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void UpdateText()
+    {
     }
 
     void CloseUI()
@@ -31,6 +38,6 @@ public class MinigameIntroUI : UIParentScript
 
     public void OnButtonClick()
     {
-        EventSystem.current.StartPlaneMiniGame();
+        
     }
 }

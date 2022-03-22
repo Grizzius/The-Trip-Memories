@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class AssetSpawner : MonoBehaviour
 {
-    public List<GameObject> assetList;
-    public Vector3 spawnOffset;
+    public List<AssetSpawnData> assetList;
     public float spawnDelay;
 
     // Start is called before the first frame update
@@ -20,7 +19,7 @@ public class AssetSpawner : MonoBehaviour
 
     }
 
-    GameObject RandomAsset()
+    AssetSpawnData RandomAsset()
     {
         int i = Random.Range(0, assetList.Count - 1);
         return assetList[i];
@@ -31,8 +30,16 @@ public class AssetSpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(spawnDelay);
-            GameObject asset = Instantiate(RandomAsset());
-            asset.transform.position = transform.position + spawnOffset;
+            AssetSpawnData spawnData = RandomAsset();
+            GameObject asset = Instantiate(spawnData.asset);
+            asset.transform.position = transform.position + spawnData.spawnOffset;
         }
     }
+}
+
+[System.Serializable]
+public class AssetSpawnData
+{
+    public GameObject asset;
+    public Vector3 spawnOffset;
 }

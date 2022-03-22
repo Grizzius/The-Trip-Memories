@@ -82,6 +82,8 @@ public class EventSystem : MonoBehaviour
 
     //======Minigames Event======//
 
+    //Avion//
+
     public event Action OnPlaneCollision;
 
     public void PlaneCollision()
@@ -94,5 +96,21 @@ public class EventSystem : MonoBehaviour
     public void StartPlaneMiniGame()
     {
         OnStartPlaneMiniGame?.Invoke();
+    }
+
+    //Voiture//
+
+    public event Action OnStartCarMiniGame;
+
+    public void StartCarMiniGame()
+    {
+        OnStartCarMiniGame?.Invoke();
+    }
+
+    public event Action OnCarCollision;
+
+    public void CarCollision()
+    {
+        OnCarCollision?.Invoke();
     }
 }

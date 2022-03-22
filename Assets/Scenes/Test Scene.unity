@@ -3087,6 +3087,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9074977503577301324, guid: dd6bd58fc3a44aa48bee8a04ed0e24d6, type: 3}
+      propertyPath: voyages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9074977503577301324, guid: dd6bd58fc3a44aa48bee8a04ed0e24d6, type: 3}
+      propertyPath: voyages.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: d4b1b294f996954468906d42794f17a6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd6bd58fc3a44aa48bee8a04ed0e24d6, type: 3}
 --- !u!1001 &4296325164991017830

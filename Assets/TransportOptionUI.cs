@@ -48,6 +48,15 @@ public class TransportOptionUI : UIParentScript
 
     public void OnConfirmButton()
     {
-        GameSystem.ChangeScene("PlaneMinigame", new PlaneMinigame(voyage.destinationSceneName));
+        switch (voyage.transportType)
+        {
+            case TransportType.avion:
+                GameSystem.ChangeScene("PlaneMinigame", new PlaneMinigame(voyage.destinationSceneName));
+                break;
+            case TransportType.voiture:
+                GameSystem.ChangeScene("CarMiniGame", new CarMinigame(voyage.destinationSceneName));
+                break;
+        }
+        
     }
 }

@@ -8,6 +8,8 @@ public class CarController : MonoBehaviour
     public Vector3 midlePosition;
     public Vector3 rightPosition;
 
+    public bool canCollide = true;
+
     public float transitionSpeed;
 
     Vector3 currentPosition;
@@ -16,6 +18,8 @@ public class CarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EventSystem.current.OnCarCollision += Collision;
+
         aimPosition = midlePosition;
     }
 
@@ -62,5 +66,18 @@ public class CarController : MonoBehaviour
         Gizmos.DrawWireSphere(leftPosition, 1);
         Gizmos.DrawWireSphere(midlePosition, 1);
         Gizmos.DrawWireSphere(rightPosition, 1);
+    }
+
+    private void Collision()
+    {
+        print("Collision");
+        canCollide = false;
+        StartCoroutine(DamageCoroutine());
+    }
+
+    IEnumerator DamageCoroutine()
+    {
+        yield return new WaitForSeconds(1);
+        canCollide = true;
     }
 }
