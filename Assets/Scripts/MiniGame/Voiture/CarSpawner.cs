@@ -51,7 +51,7 @@ public class CarSpawner : MonoBehaviour
         int spawnIndex = GetSpawnIndex();
         newCar.transform.position = transform.position + spawnPositions[spawnIndex];
 
-        newCar.speed = Random.Range(100, 150);
+        newCar.speed = 150;
     }
 
     int GetSpawnIndex()

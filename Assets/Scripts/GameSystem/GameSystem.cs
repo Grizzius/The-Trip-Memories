@@ -23,8 +23,10 @@ public class GameSystem : GameSystemStateMachine
 
     [Header("Minigame parameters")]
     public PlaneMinigameParam defaultPlaneMinigameParameter;
+    public CarMiniGameParameter defaultCarMinigameParameter;
 
     public static PlaneMinigameParam planeMinigameParameter;
+    public static CarMiniGameParameter carMinigameParameter;
 
     private void Start()
     {
@@ -36,6 +38,7 @@ public class GameSystem : GameSystemStateMachine
             playerMoney = playerStartMoney;
             SetMode(new DefaultMode());
             planeMinigameParameter = defaultPlaneMinigameParameter;
+            carMinigameParameter = defaultCarMinigameParameter;
 
             for(int i = 0; i < EventTriggers.Length; i++)
             {

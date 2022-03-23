@@ -1590,6 +1590,7 @@ MonoBehaviour:
     month: 2
   playerStartPositionID: 0
   defaultPlaneMinigameParameter: {fileID: 11400000, guid: f4d218275710c244e82cd96c06b3ded9, type: 2}
+  defaultCarMinigameParameter: {fileID: 11400000, guid: a36ad7f8a9544af468d0da7cbbe7bca2, type: 2}
 --- !u!4 &1521596522
 Transform:
   m_ObjectHideFlags: 0

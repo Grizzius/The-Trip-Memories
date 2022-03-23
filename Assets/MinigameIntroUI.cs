@@ -29,7 +29,16 @@ public class MinigameIntroUI : UIParentScript
 
     void UpdateText()
     {
-
+        if(GameSystem.gameMode.GetType() == typeof(PlaneMinigame))
+        {
+            GameNameText.text = GameSystem.planeMinigameParameter.minigameName;
+            GameGuideText.text = GameSystem.planeMinigameParameter.minigameGuide;
+        }
+        else if (GameSystem.gameMode.GetType() == typeof(CarMinigame))
+        {
+            GameNameText.text = GameSystem.carMinigameParameter.miniGameName;
+            GameGuideText.text = GameSystem.carMinigameParameter.miniGameGuide;
+        }
     }
 
     void CloseUI()
