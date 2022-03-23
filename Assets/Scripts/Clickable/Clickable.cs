@@ -17,33 +17,47 @@ public class Clickable : MonoBehaviour
     {
         outline = GetComponent<Outline>();
         outline.enabled = false;
+        EventSystem.current.OnRaycastHitItem += CheckIfGotHit;
+        EventSystem.current.OnRaycastNoHitItem += RaycastDidNotHit;
     }
 
-    protected void OnMouseEnter()
+    void CheckIfGotHit(RaycastHit hit)
+    {
+        if (hit.transform == transform)
+        {
+            RaycastDidHit();
+        }
+        else
+        {
+            RaycastDidNotHit();
+        }
+    }
+
+    protected void RaycastDidHit()
     {
         if (StateCondictionCheck())
         {
             canBeClicked = true;
-            ToggleOutline(5f);
+            ToggleOutline(3.5f);
         }
         
     }
 
-    protected void OnMouseExit()
+    protected void RaycastDidNotHit()
     {
         canBeClicked = false;
         ToggleOutline(0f);
     }
 
-    protected void Update()
+    private void Update()
     {
-        if(Input.GetButtonDown("Fire1") && canBeClicked)
+        if (Input.GetButtonDown("Fire1") && canBeClicked)
         {
             if (StateCondictionCheck())
             {
                 ClickedEvent();
             }
-            
+
         }
     }
 
@@ -78,6 +92,7 @@ public class Clickable : MonoBehaviour
         if(value != 0)
         {
             outline.enabled = true;
+            outline.OutlineColor = Color.yellow;
             outline.OutlineWidth = value;
         }
         else

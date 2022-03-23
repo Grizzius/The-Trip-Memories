@@ -24,7 +24,7 @@ public class PlayerPositions : MonoBehaviour
         int i = 0;
         foreach(Vector3 position in playerPositionList)
         {
-            Gizmos.DrawWireSphere(position, 0.5f);
+            Gizmos.DrawWireSphere(position, 0.1f);
             GUI.color = Color.cyan;
             Handles.Label(position, i.ToString());
 

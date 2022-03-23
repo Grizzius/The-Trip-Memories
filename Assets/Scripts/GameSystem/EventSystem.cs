@@ -72,6 +72,20 @@ public class EventSystem : MonoBehaviour
         OnCloseRandomEventTab?.Invoke();
     }
 
+    public event Action<RaycastHit> OnRaycastHitItem;
+
+    public void RaycastHitItem(RaycastHit hit)
+    {
+        OnRaycastHitItem?.Invoke(hit);
+    }
+
+    public event Action OnRaycastNoHitItem;
+
+    public void RaycastNoHitItem()
+    {
+        OnRaycastNoHitItem?.Invoke();
+    }
+
     //======Appart Events======//
     public event Action OnAdvanceDate;
 
