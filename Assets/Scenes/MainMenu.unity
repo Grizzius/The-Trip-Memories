@@ -583,7 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3912f105df807494287527102d3edffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstSceneName: Test Scene
+  firstSceneName: SAN_FRANCISCO_APPARTEMENT
 --- !u!114 &750005117
 MonoBehaviour:
   m_ObjectHideFlags: 0

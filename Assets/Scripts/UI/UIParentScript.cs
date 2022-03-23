@@ -18,7 +18,7 @@ public class UIParentScript : MonoBehaviour
 
     void ConfirmReceiveMessage(int ID)
     {
-        print("Message reçu");
+
     }
 
     protected void UIOpenEventListener(int id)

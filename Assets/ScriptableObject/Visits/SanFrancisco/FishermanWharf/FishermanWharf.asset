@@ -15,7 +15,16 @@ MonoBehaviour:
   visitName: Fisherman's Wharf
   VisitDescription: Le port de San Francisco.
   minPrice: 0
-  maxPrice: 0
+  maxPrice: 100
   DefaultFunValue: 0
-  randomEventDatas: []
+  randomEventDatas:
+  - {fileID: 11400000, guid: 75ad38ca839bdaf42a99e30d31173d72, type: 2}
+  - {fileID: 11400000, guid: b3e6833f9cbf51448b50059afd279303, type: 2}
+  - {fileID: 11400000, guid: 23ec8223900c9d949bf9506d45bd4c57, type: 2}
+  - {fileID: 11400000, guid: 2036cade41e06c84cb93767066ca73c2, type: 2}
+  - {fileID: 11400000, guid: 8e72dbc85b7cbe54c854ebd1736d07c5, type: 2}
+  - {fileID: 11400000, guid: e64e3473d1a45ed4bba0deb5d47cffea, type: 2}
+  - {fileID: 11400000, guid: a64062e6bbe2cdc4085bffaf59ab2951, type: 2}
+  - {fileID: 11400000, guid: c8c5433f2ca555345b772fefa04aaf7d, type: 2}
+  - {fileID: 11400000, guid: fe49eb34222705541bfc29f35177968b, type: 2}
   visitType: 1

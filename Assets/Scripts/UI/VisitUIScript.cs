@@ -80,7 +80,6 @@ public class VisitUIScript : UIParentScript
         Debug.Log("End Visit");
 
         GameSystem.AddDay(1);
-        GameSystem.playerMoney -= price;
 
         StartCoroutine(EndVisitCoroutine());
     }

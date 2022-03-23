@@ -15,7 +15,11 @@ MonoBehaviour:
   visitName: GoldenGate
   VisitDescription: "Le pont embl\xE9matique de San Francisco !"
   minPrice: 11
-  maxPrice: 11
+  maxPrice: 110
   DefaultFunValue: 0
-  randomEventDatas: []
+  randomEventDatas:
+  - {fileID: 11400000, guid: 6ddedf2485acacc45917f4c5f6b960aa, type: 2}
+  - {fileID: 11400000, guid: 1af2bae2a347a544a8834aa5e81db04b, type: 2}
+  - {fileID: 11400000, guid: ab6a53888a1dc6f47a957d7442d390b2, type: 2}
+  - {fileID: 11400000, guid: 0de317a982bd89041bf8f418ff002c89, type: 2}
   visitType: 1

@@ -38,6 +38,7 @@ public class RandomEventUI : UIParentScript
     public void OnButtonClick()
     {
         EventSystem.current.CloseRandomEventTab();
+        EventSystem.current.CloseUI(1);
         EventSystem.current.CloseUI(ID);
     }
 }

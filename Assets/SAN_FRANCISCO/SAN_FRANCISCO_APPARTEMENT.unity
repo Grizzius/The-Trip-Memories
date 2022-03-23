@@ -5114,6 +5114,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -45
       objectReference: {fileID: 0}
+    - target: {fileID: 9174949144447904628, guid: 979bf46599b1098488090359408fc96e, type: 3}
+      propertyPath: m_RendererIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174949144447904628, guid: 979bf46599b1098488090359408fc96e, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9174949144447904630, guid: 979bf46599b1098488090359408fc96e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.4
