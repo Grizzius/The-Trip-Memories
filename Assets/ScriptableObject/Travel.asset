@@ -16,4 +16,4 @@ MonoBehaviour:
   transportType: 1
   travelTime: 2
   cost: 25
-  destinationSceneName: Test Scene
+  destinationSceneName: HONG_KONG

@@ -127,4 +127,11 @@ public class EventSystem : MonoBehaviour
     {
         OnCarCollision?.Invoke();
     }
+
+    public event Action OnEndCarMinigame;
+
+    public void EndCarMinigame()
+    {
+        OnEndCarMinigame?.Invoke();
+    }
 }

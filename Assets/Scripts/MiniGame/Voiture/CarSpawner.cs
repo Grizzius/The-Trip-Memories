@@ -13,10 +13,13 @@ public class CarSpawner : MonoBehaviour
 
     public AnimationCurve curve;
 
+    bool canSpawnCars = true;
+
     // Start is called before the first frame update
     void Start()
     {
         EventSystem.current.OnStartCarMiniGame += StartSpawnCars;
+        EventSystem.current.OnEndCarMinigame += CantSpawnCars;
     }
 
     // Update is called once per frame
@@ -30,9 +33,14 @@ public class CarSpawner : MonoBehaviour
         StartCoroutine(SpawnCarLoop());
     }
 
+    void CantSpawnCars()
+    {
+        canSpawnCars = false;
+    }
+
     IEnumerator SpawnCarLoop()
     {
-        while (true)
+        while (canSpawnCars)
         {
             CarMinigame carMinigame = (CarMinigame)GameSystem.gameMode;
             yield return new WaitForSeconds(Random.Range(0.2f, 0.2f + curve.Evaluate(1f - carMinigame.timer / 90f)));

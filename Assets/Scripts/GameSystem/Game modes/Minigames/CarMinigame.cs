@@ -10,6 +10,9 @@ public class CarMinigame : MiniGameGameMode
     public int collisionCount;
     public int timer = 90;
 
+    public int LostDays;
+    public int LostMoney;
+
     public CarMinigame(string NextSceneName)
     {
         nextSceneName = NextSceneName;
@@ -49,6 +52,31 @@ public class CarMinigame : MiniGameGameMode
             timer--;
         }
 
+        yield return new WaitForSeconds(3);
+        CalculateResult();
+        EventSystem.current.EndCarMinigame();
+
+        GameSystem.AddDay(LostDays);
+        GameSystem.playerMoney -= LostMoney;
+
+        yield return new WaitForSeconds(10);
+
         GameSystem.ChangeScene(nextSceneName, new DefaultMode());
+    }
+
+    void CalculateResult()
+    {
+        int malusRate = collisionCount;
+
+        if(malusRate > 5)
+        {
+            malusRate = 5;
+        }
+
+        for(int i = 0; i < malusRate; i++)
+        {
+            LostDays++;
+            LostMoney += 10;
+        }
     }
 }
