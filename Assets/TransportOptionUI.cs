@@ -57,17 +57,21 @@ public class TransportOptionUI : UIParentScript
 
     public void OnConfirmButton()
     {
-        GameSystem.AddDay(voyage.travelTime);
-        GameSystem.playerMoney -= voyage.cost;
-        switch (voyage.transportType)
+        if(GameSystem.playerMoney >= voyage.cost)
         {
-            case TransportType.avion:
-                GameSystem.ChangeScene("PlaneMinigame", new PlaneMinigame(voyage.destinationSceneName));
-                break;
-            case TransportType.voiture:
-                GameSystem.ChangeScene("CarMiniGame", new CarMinigame(voyage.destinationSceneName));
-                break;
+            GameSystem.AddDay(voyage.travelTime);
+            GameSystem.playerMoney -= voyage.cost;
+            switch (voyage.transportType)
+            {
+                case TransportType.avion:
+                    GameSystem.ChangeScene("PlaneMinigame", new PlaneMinigame(voyage.destinationSceneName));
+                    break;
+                case TransportType.voiture:
+                    GameSystem.ChangeScene("CarMiniGame", new CarMinigame(voyage.destinationSceneName));
+                    break;
+            }
         }
+        
         
     }
 }
