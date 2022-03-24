@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8560c2d8945e644dbadb3ee30372d10, type: 3}
+  m_Name: GuideMusee
+  m_EditorClassIdentifier: 
+  jobName: "Guide de mus\xE9e"
+  jobDescription: "Un m\xE9tier de r\xEAve pour les voyageurs !"
+  openLundi: 0
+  openMardi: 1
+  openMercredi: 0
+  openJeudi: 0
+  openVendredi: 0
+  openSamedi: 1
+  openDimanche: 1
+  Pay: 80

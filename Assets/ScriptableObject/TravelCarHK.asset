@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db3e02cb2a71557489203f816337ec17, type: 3}
-  m_Name: Car Travel
+  m_Name: TravelCarHK
   m_EditorClassIdentifier: 
-  destinationName: 
+  destinationName: Hong Kong
   transportType: 0
-  travelTime: 0
-  cost: 0
+  travelTime: 5
+  cost: 500
   destinationSceneName: HONG_KONG

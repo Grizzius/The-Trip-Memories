@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db3e02cb2a71557489203f816337ec17, type: 3}
-  m_Name: Travel
+  m_Name: TravelAvionSF
   m_EditorClassIdentifier: 
-  destinationName: Hong Kong
+  destinationName: San Francisco
   transportType: 1
   travelTime: 2
-  cost: 25
-  destinationSceneName: HONG_KONG
+  cost: 750
+  destinationSceneName: SAN_FRANCISCO_APPARTEMENT
