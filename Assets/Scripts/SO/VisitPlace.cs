@@ -14,6 +14,7 @@ public class VisitPlace : ScriptableObject
     public int DefaultFunValue;
     public RandomEventData[] randomEventDatas;
     public VisitType visitType;
+    public Sprite paint;
 
     public void OnValidate()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VisitUIScript : UIParentScript
 {
@@ -9,6 +10,7 @@ public class VisitUIScript : UIParentScript
     public static VisitPlace visit;
     public static VisitUIScript current;
     public static int price;
+    public Image paint; 
 
     protected override void Start()
     {
@@ -33,6 +35,7 @@ public class VisitUIScript : UIParentScript
         Debug.Log("Start visit");
         ZoomInUI.current.CloseTab();
         canvas.enabled = true;
+        paint.sprite = visit.paint;
 
         StartCoroutine(VisitCoroutine());
     }
