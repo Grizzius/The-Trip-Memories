@@ -15,6 +15,7 @@ public class VisitOptionScript : UIParentScript
     public TextMeshProUGUI priceText;
     public TextMeshProUGUI FunValueText;
     public Button confirmButton;
+    public Image image;
     
     int visitPrice;
     int funValue;
@@ -38,6 +39,7 @@ public class VisitOptionScript : UIParentScript
         priceSlider.maxValue = visit.maxPrice;
 
         priceSlider.value = priceSlider.minValue;
+        image.sprite = visit.paint;
 
         UpdatePrice();
     }

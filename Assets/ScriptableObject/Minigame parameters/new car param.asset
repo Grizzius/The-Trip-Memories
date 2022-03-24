@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707c94f1e8e324e41bb7fe9c19d5b5b3, type: 3}
   m_Name: new car param
   m_EditorClassIdentifier: 
-  miniGameName: Caaaaar
-  miniGameGuide: Caaaaaaaaaaaaaaaaaaar
+  miniGameName: Voiture
+  miniGameGuide: "Esquivez les voitures devant vous ! Evitez un maximum de collisions
+    dans le temps imparti.\n-Touches flech\xE9es droite / gauche : changer de voie\n"

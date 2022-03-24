@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameSystem : GameSystemStateMachine
 {
     public static bool[] EventTriggers = new bool[256];
-    public static int playerMoney = 500;
+    public static int playerMoney = 50000;
     public static int playerLuck = 50;
     public static int playerKnowledge;
     public static int playerMemories;

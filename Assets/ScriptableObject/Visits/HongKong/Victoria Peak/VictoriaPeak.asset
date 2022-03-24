@@ -27,3 +27,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 739e8f57e1f7a9349a14da3384efecaa, type: 2}
   - {fileID: 11400000, guid: 03c323a3bfb633f4dbd0cb40c91b1337, type: 2}
   visitType: 1
+  paint: {fileID: 0}

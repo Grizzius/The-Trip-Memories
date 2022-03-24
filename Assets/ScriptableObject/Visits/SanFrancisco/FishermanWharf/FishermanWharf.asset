@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FishermanWharf
   m_EditorClassIdentifier: 
   visitName: Fisherman's Wharf
-  VisitDescription: Le port de San Francisco.
+  VisitDescription: Le port de San Francisco qui est aussi le quartier le plus populaire.
   minPrice: 0
   maxPrice: 100
   DefaultFunValue: 0
@@ -28,3 +28,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c8c5433f2ca555345b772fefa04aaf7d, type: 2}
   - {fileID: 11400000, guid: fe49eb34222705541bfc29f35177968b, type: 2}
   visitType: 1
+  paint: {fileID: 21300000, guid: 87ecee39561e96243bf73f8106b7cc7e, type: 3}

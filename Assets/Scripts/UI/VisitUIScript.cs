@@ -42,6 +42,7 @@ public class VisitUIScript : UIParentScript
 
     IEnumerator VisitCoroutine()
     {
+        
         RandomEventData randomEvent = ChooseRandomEvent();
         if(randomEvent != null)
         {
@@ -50,6 +51,7 @@ public class VisitUIScript : UIParentScript
             RandomEventUI.current.randomEvent = randomEvent;
 
             //Apply random event modifiers
+            yield return new WaitForSeconds(1);
             GameSystem.playerMoney += randomEvent.moneyModifier;
             GameSystem.playerLuck += randomEvent.luckModifier;
             GameSystem.playerKnowledge += randomEvent.knowledgeModifier;
@@ -60,9 +62,9 @@ public class VisitUIScript : UIParentScript
                 GameSystem.EventTriggers[modifier.ID] = modifier.value;
             }
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1);
+            paint.enabled = true;
             PlayerScript.SetState(new PlayerRoomState(PlayerScript.current));
-            print("Ca marche jusque là");
             OpenRandomEventUI();
         }
         else
@@ -90,6 +92,7 @@ public class VisitUIScript : UIParentScript
 
     IEnumerator EndVisitCoroutine()
     {
+        paint.enabled = false;
         EventSystem.current.EndVisitMode();
         TriggerAnim("FadeOut");
         yield return new WaitForSeconds(1f);
