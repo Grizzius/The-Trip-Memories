@@ -5,15 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameSystem : GameSystemStateMachine
 {
-    [Header("Starting parameters")]
-    public int playerStartMoney;
-    public Date startingDate;
-    public int playerStartPositionID;
-
     public static bool[] EventTriggers = new bool[256];
-    public static int playerMoney;
-    public static int playerLuck;
+    public static int playerMoney = 500;
+    public static int playerLuck = 50;
     public static int playerKnowledge;
+    public static int playerMemories;
 
     public static bool FirstLaunch = true;
     public static Date date;
@@ -33,10 +29,14 @@ public class GameSystem : GameSystemStateMachine
         current = this;
         if (FirstLaunch)
         {
-            date = startingDate;
-            PlayerHouseUI.current.UpdateDate();
-            playerMoney = playerStartMoney;
             SetMode(new DefaultMode());
+            print("First launch");
+            date = new Date
+            {
+                weekDay = Day.Lundi,
+                monthDay = 7,
+                month = Month.Mars
+            };
             planeMinigameParameter = defaultPlaneMinigameParameter;
             carMinigameParameter = defaultCarMinigameParameter;
 
@@ -52,7 +52,16 @@ public class GameSystem : GameSystemStateMachine
 
     private void Update()
     {
-        gameMode.Update();
+        if(gameMode != null)
+        {
+            gameMode.Update();
+        }
+        else
+        {
+            Debug.LogError("no gamemode found");
+            SetMode(new DefaultMode());
+        }
+        
     }
 
     public static void ChangeScene(string SceneName, GameMode gameMode)

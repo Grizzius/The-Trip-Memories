@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
+  m_Name: DragonBack_RE_Neutre
+  m_EditorClassIdentifier: 
+  eventTitle: Dragon's Back
+  eventText: "Au bout de 20 minutes de randonn\xE9, nous arrivons au point d\u2019observation
+    de la p\xE9ninsule de Shek O, le paysage est magnifique on y voit les deux \xEEles
+    situ\xE9es au large de la p\xE9ninsule. Info : Le parcours se fait en grande
+    partie sur des chemins de terre. La premi\xE8re moiti\xE9 est tr\xE8s peu ombrag\xE9e
+    et comporte une mont\xE9e raide de 200 m\xE8tres de long, la deuxi\xE8me partie
+    est n\xE9anmoins plus facile et finit sur des marches en pierre un peu raide.
+    Avant d'arriver \xE0 Big Wave Bay la plage d'arriv\xE9e, je vous conseille de
+    faire un d\xE9tour par la for\xEAt Siu Wai Wan, un d\xE9tour de seulement 30
+    minutes qui vaut le coup, les arbres sont magnifiques ! Et si vous avez de la
+    chance vous pouvez m\xEAme rencontrer des animaux insolites !"
+  moneyModifier: -5
+  luckModifier: 9
+  knowledgeModifier: 0
+  memoryModifier: 11
+  triggerModifiers: []
+  moneyCondition: 5
+  openDays: 00000000010000000200000003000000040000000500000006000000
+  triggers: []
+  probabilityType: 2
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

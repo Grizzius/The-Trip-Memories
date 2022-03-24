@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
+  m_Name: ModernArt_RE_Chance
+  m_EditorClassIdentifier: 
+  eventTitle: Museum of modern art
+  eventText: "Incroyable journ\xE9e au mus\xE9e, les expositions \xE9tait \xE9poustouflante,
+    j\u2019ai beaucoup parl\xE9 avec une personne qui travaill\xE9 sur place et il
+    m\u2019a invit\xE9 \xE0 une soir\xE9e sp\xE9cial nomm\xE9 Art Bash, cocktails
+    et d\xEEner offert et design par Sarah Cain, avec la pr\xE9sence de plusieurs
+    artiste telle que Jeff Koons, Julie Mehretu et bien d\u2019autre !"
+  moneyModifier: -25
+  luckModifier: 0
+  knowledgeModifier: 20
+  memoryModifier: 20
+  triggerModifiers: []
+  moneyCondition: 25
+  openDays: 03000000
+  triggers: []
+  probabilityType: 2
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5047188
+      inSlope: 0.49528122
+      outSlope: 0.49528122
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.49528122
+      outSlope: 0.49528122
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

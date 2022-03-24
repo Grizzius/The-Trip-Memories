@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
+  m_Name: Patrimoine_RE_Chance
+  m_EditorClassIdentifier: 
+  eventTitle: "Mus\xE9e du patrimoine"
+  eventText: "Incroyable journ\xE9e au mus\xE9e, les expositions \xE9taient \xE9poustouflantes,
+    en particulier \u201CKung Hei Fat Choi - Nouvel an chinois et des images\u201D
+    qui contient plus de 3000 objets expos\xE9s, le mus\xE9e est tr\xE8s int\xE9ractif.
+    L\u2019exposition Hong Kong Toy Story est une zone id\xE9ale pour les enfants,
+    ils peuvent manipuler des ateliers pour apprendre en s\u2019amusant."
+  moneyModifier: 0
+  luckModifier: 0
+  knowledgeModifier: 20
+  memoryModifier: 20
+  triggerModifiers: []
+  moneyCondition: 0
+  openDays: 04000000
+  triggers: []
+  probabilityType: 1
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.97618103
+      inSlope: 0.02381897
+      outSlope: 0.02381897
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.02381897
+      outSlope: 0.02381897
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

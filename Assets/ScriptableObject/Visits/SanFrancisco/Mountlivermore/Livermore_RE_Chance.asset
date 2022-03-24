@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
+  m_Name: Livermore_RE_Chance
+  m_EditorClassIdentifier: 
+  eventTitle: Mount livermore
+  eventText: "Le ferry est arriv\xE9 \xE0 Ayala cove, un endroit o\xF9 il y a des
+    restaurants et des stands snacks et boissons, je suis arriv\xE9 \xE0 9h. Bon
+    plan : Ne pas manger au restaurant sur place qui sont des attrapes touriste,
+    prenez seulement des sandwichs pour allez faire un picnic au milieu de la rando
+    ! J\u2019ai ensuite pris la route North Ridge Trail, c\u2019est la plus populaire
+    et elle n 'usurpe pas son titre, elle passe par le mont livermore avec des paysages
+    magnifiques ! Petit jeu pour vous ! Essayez le long de la route de voir les 5
+    grands ponts : Richmond-San Rafael, Bay, Golden Gate, San Mateo-Hayward et Dumbarton
+    Bridges, si vous avez un beau temps vous pouvez tous les voir une fois au sommet
+    ! Avec un arr\xEAt au sommet du mont livermore qui est \xE0 plus de 780 ft, j\u2019ai
+    trouv\xE9 l\u2019endroit parfait pour faire un picnic, l\u2019une des meilleures
+    exp\xE9rience de randonn\xE9 \xE0 ce jour que j\u2019ai faite !"
+  moneyModifier: -30
+  luckModifier: 15
+  knowledgeModifier: 0
+  memoryModifier: 15
+  triggerModifiers: []
+  moneyCondition: 30
+  openDays: 00000000010000000200000003000000040000000500000006000000
+  triggers: []
+  probabilityType: 2
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0083351135
+      value: 0.49528122
+      inSlope: 0.508961
+      outSlope: 0.508961
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.508961
+      outSlope: 0.508961
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

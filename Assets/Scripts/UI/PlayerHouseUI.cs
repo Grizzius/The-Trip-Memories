@@ -16,23 +16,21 @@ public class PlayerHouseUI : UIParentScript
     {
         base.Start();
         current = this;
+        UpdateDate();
     }
 
     // Update is called once per frame
     void Update()
     {
+        UpdateDate();
         PlayerMoneyText.text = GameSystem.playerMoney.ToString();
-        
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            GameSystem.AddDay(4);
-            UpdateDate();
-        }
     }
 
     public void UpdateDate()
     {
-        DateText.text = (GameSystem.date.weekDay + " " + GameSystem.date.monthDay + " " + (GameSystem.date.month) + " 20XX");
+        if (GameSystem.date != null)
+        {
+            DateText.text = (GameSystem.date.weekDay + " " + GameSystem.date.monthDay + " " + (GameSystem.date.month) + " 20XX");
+        }
     }
 }

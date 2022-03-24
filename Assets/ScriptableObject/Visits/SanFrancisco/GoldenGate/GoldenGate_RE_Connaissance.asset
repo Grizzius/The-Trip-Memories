@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
   m_Name: GoldenGate_RE_Connaissance
   m_EditorClassIdentifier: 
-  eventTitle: GoldenGate
+  eventTitle: Golden Gate
   eventText: "J\u2019ai ador\xE9 l'architecture et le d\xE9fi technique du pont.
     D\xE9tail technique : Des jet\xE9es de plus de 99 000 tonnes avec une longueur
     de 1940 de long, pour un pont qui fait passer plus de 42 millions de v\xE9hicules

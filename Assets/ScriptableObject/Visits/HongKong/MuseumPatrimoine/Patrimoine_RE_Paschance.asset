@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
+  m_Name: Patrimoine_RE_Paschance
+  m_EditorClassIdentifier: 
+  eventTitle: "Mus\xE9e du patrimoine"
+  eventText: "Je ne recommande pas d'aller au mus\xE9e le week-end, il y a beaucoup
+    de monde je n\u2019ai pas eu le temps de tout visiter. Ce mus\xE9e contient beaucoup
+    d\u2019art contemporain, des peintures, des croquis, des sculptures mais aussi
+    des \u0153uvres de photographies, de la c\xE9ramique et de l'imprimerie, un mus\xE9e
+    assez complet qui peut se visiter plusieurs fois."
+  moneyModifier: 0
+  luckModifier: 0
+  knowledgeModifier: 4
+  memoryModifier: 6
+  triggerModifiers: []
+  moneyCondition: 0
+  openDays: 0500000006000000
+  triggers: []
+  probabilityType: 1
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

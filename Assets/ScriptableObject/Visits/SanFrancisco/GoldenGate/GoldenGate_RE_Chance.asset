@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
   m_Name: GoldenGate_RE_Chance
   m_EditorClassIdentifier: 
-  eventTitle: GoldenGate
+  eventTitle: Golden Gate
   eventText: "J\u2019ai bien fait de venir en fin de journ\xE9e. D\xE9tail technique
     : Avec un \xE9clairage de 128 lampes sur la route et 12 lampes d\xE9coratives
     sur chaque pilier, le pont de nuit est vachement \xE9clair\xE9 avec des couleurs

@@ -11,6 +11,7 @@ public class PlayerPositions : MonoBehaviour
     void Start()
     {
         current = this;
+        MovePlayer(0);
     }
 
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class PlayerPositions : MonoBehaviour
         {
             Gizmos.DrawWireSphere(position, 0.1f);
             GUI.color = Color.cyan;
-            Handles.Label(position, i.ToString());
+            //Handles.Label(position, i.ToString());
 
             i++;
         }

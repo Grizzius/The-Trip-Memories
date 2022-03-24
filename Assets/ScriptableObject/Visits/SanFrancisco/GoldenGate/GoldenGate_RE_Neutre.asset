@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
   m_Name: GoldenGate_RE_Neutre
   m_EditorClassIdentifier: 
-  eventTitle: GoldenGate
+  eventTitle: Golden Gate
   eventText: "D\xE9tail technique : Un pont principalement construit en acier d\xE9cor\xE9
     d\u2019une couleur Orange internationnal qui est un mix de 100 couleurs de jaune,
     69 de magenta et 6 de noir, ce monument est imposant. Ce monument est un passage

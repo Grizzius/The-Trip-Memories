@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
+  m_Name: Livermore_RE_Pachance
+  m_EditorClassIdentifier: 
+  eventTitle: Mount livermore
+  eventText: "Arriv\xE9 en ferry \xE0 Ayala cove, j\u2019ai pas choisi la bonne journ\xE9e
+    de voyage pour ce d\xE9but de journ\xE9e, il fait un temps horrible. Je voulais
+    de base aller faire un picnic mais j\u2019ai abandonn\xE9 cette id\xE9e au vue
+    du temps j\u2019ai mang\xE9 dans un restaurants qui ce trouvais sur place, je
+    ne vous le conseil pas c\u2019\xE9tait des attrapes touriste. J\u2019ai choisi
+    de d\xE9couvrir la Fire Road, avec des vue de haut vers la mer et les autres
+    \xEEles \xE0 c\xF4t\xE9 c\u2019est magnifique\u2026 Enfin \xE7a aurait d\xFB
+    \xEAtre magnifique sans le brouillard et la pluie pr\xE9sente le jour ou j'ai
+    \xE9crit \xE7a.."
+  moneyModifier: -30
+  luckModifier: 2
+  knowledgeModifier: 0
+  memoryModifier: 6
+  triggerModifiers: []
+  moneyCondition: 30
+  openDays: 00000000010000000200000003000000040000000500000006000000
+  triggers: []
+  probabilityType: 2
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.8263837
+      outSlope: -0.8263837
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9874878
+      value: 0.18395615
+      inSlope: -0.8263837
+      outSlope: -0.8263837
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

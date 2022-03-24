@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
+  m_Name: DragonBack_RE_Paschance
+  m_EditorClassIdentifier: 
+  eventTitle: Dragon's Back
+  eventText: "Info importante : Il faut \xE0 tout pris ne pas oublier la cr\xE8me
+    solaire, je me suis fait avoir comme une bleue, je pensais l\u2019avoir mise
+    dans mon sac. Le chemin n'est pas couvert du soleil, surtout au sommet de Shek
+    O Peak. Question toutes b\xEAtes, vous savez pourquoi Dragon\u2019s back s\u2019appelle
+    comme \xE7a ? C\u2019est tr\xE8s simple, allez au point d\u2019observation Shek
+    O Peak au sommet et regardez le chemin parcouru, vous observerez la montagne
+    qui a la forme d\u2019un dos de dragon !"
+  moneyModifier: -5
+  luckModifier: 5
+  knowledgeModifier: 0
+  memoryModifier: 8
+  triggerModifiers: []
+  moneyCondition: 5
+  openDays: 00000000010000000200000003000000040000000500000006000000
+  triggers: []
+  probabilityType: 2
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.49944222
+      outSlope: -0.49944222
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9916687
+      value: 0.5047188
+      inSlope: -0.49944222
+      outSlope: -0.49944222
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

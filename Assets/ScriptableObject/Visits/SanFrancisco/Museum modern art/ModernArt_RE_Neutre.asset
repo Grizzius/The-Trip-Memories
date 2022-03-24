@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
+  m_Name: ModernArt_RE_Neutre
+  m_EditorClassIdentifier: 
+  eventTitle: Museum of modern art
+  eventText: "Le bon plan est d'aller en semaine au mus\xE9e, il y a beaucoup moin
+    de monde, les expositions \xE0 ne pas rater sont Contemporary Optics qui joue
+    avec des illusions d'optique impressionnante et Nature X Humanity qui est fait
+    en biomat\xE9riaux et repr\xE9sente tr\xE8s bien la transition des mat\xE9riaux
+    utilis\xE9 par l\u2019humain au fur et \xE0 mesure des ann\xE9es, \xE0 ne pas
+    rater !"
+  moneyModifier: -25
+  luckModifier: 0
+  knowledgeModifier: 15
+  memoryModifier: 10
+  triggerModifiers: []
+  moneyCondition: 25
+  openDays: 000000000300000004000000
+  triggers: []
+  probabilityType: 2
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

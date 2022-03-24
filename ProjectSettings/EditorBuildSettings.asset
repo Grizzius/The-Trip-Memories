@@ -6,24 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 33a83ca854fa733469f7d0beaeb1d037
+  - enabled: 1
     path: Assets/HONG_KONG/Scenes/HONG_KONG.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test Scene.unity
     guid: a8daac9ea3dfce54c8a1d9fe9c4b126f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BoatMiniGame.unity
     guid: bcf8da2e092e52844bf09b6f2fbcbf22
   - enabled: 1
     path: Assets/Scenes/Minigames/PlaneMinigame.unity
     guid: ffc11c3e27e777a458f0608a255a90ac
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 33a83ca854fa733469f7d0beaeb1d037
-  - enabled: 1
     path: Assets/Scenes/Minigames/CarMiniGame.unity
     guid: 0195ebcbdd79c8e49b45b343adc62959
   - enabled: 1
     path: Assets/SAN_FRANCISCO/SAN_FRANCISCO_APPARTEMENT.unity
     guid: 147d7901cb379ef48bd41016fe7fd939
+  - enabled: 1
+    path: Assets/Scenes/EndMenu.unity
+    guid: 5eb5523594a3f8f49a400eb1f9aec4a5
   m_configObjects: {}

@@ -50,16 +50,16 @@ public class PlaneController : MonoBehaviour
         if (Input.GetAxisRaw("Vertical") < 0)
         {
             Debug.Log("down");
-            transform.rotation = new Quaternion(25, 0, 0, 1);
+            transform.rotation = Quaternion.Slerp(transform.rotation, new Quaternion(0.1f, 0, 0, 1), 10f*Time.deltaTime);
         } 
         else if(Input.GetAxisRaw("Vertical") > 0)
         {
             Debug.Log("Up");
-            transform.rotation = new Quaternion(-25, 0, 0, 1);
+            transform.rotation = Quaternion.Slerp(transform.rotation, new Quaternion(-0.1f, 0, 0, 1), 10f*Time.deltaTime);
         }
         else
         {
-            transform.rotation = new Quaternion(0, 0, 0, 1);
+            transform.rotation = Quaternion.Slerp(transform.rotation, new Quaternion(0, 0, 0, 1), 1f * Time.deltaTime);
         }
     }
 
@@ -78,7 +78,7 @@ public class PlaneController : MonoBehaviour
     {
         canTakeDamage = false;
 
-        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+        MeshRenderer meshRenderer = GetComponentInChildren<MeshRenderer>();
 
         for(float f = 0; f < damageImunityDuration; f += 0.075f)
         {

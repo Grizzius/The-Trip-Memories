@@ -6,9 +6,16 @@ public class Montgolfière : MonoBehaviour
 {
     public float speed;
     public float movementIntensity;
+    public Material[] materials;
     // Start is called before the first frame update
     void Start()
     {
+        MeshRenderer[] meshRenderers = GetComponentsInChildren<MeshRenderer>();
+        int materialID = Random.Range(0, materials.Length);
+        foreach (MeshRenderer meshRenderer in meshRenderers)
+        {
+            meshRenderer.material = materials[materialID];
+        }
         
     }
 

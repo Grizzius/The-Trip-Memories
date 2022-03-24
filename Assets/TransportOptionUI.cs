@@ -27,7 +27,10 @@ public class TransportOptionUI : UIParentScript
     void UpdateUI()
     {
         arrivalDate = CalculateArrivalDate();
-        arrivalDateText.text = "Arrivée : " + arrivalDate.monthDay + " " + arrivalDate.month;
+        if(arrivalDate != null)
+        {
+            arrivalDateText.text = "Arrivée : " + arrivalDate.monthDay + " " + arrivalDate.month;
+        }
         destinationNameText.text = "Destination : " + voyage.destinationName;
         priceText.text = "$ : " + voyage.cost;
         transportNameText.text = voyage.transportType.ToString();
@@ -37,13 +40,19 @@ public class TransportOptionUI : UIParentScript
     {
         Date currentDate = new Date();
 
-        print(GameSystem.date);
-        currentDate.monthDay = GameSystem.date.monthDay;
-        currentDate.month = GameSystem.date.month;
-        currentDate.weekDay = GameSystem.date.weekDay;
+        if(GameSystem.date != null)
+        {
+            currentDate.monthDay = GameSystem.date.monthDay;
+            currentDate.month = GameSystem.date.month;
+            currentDate.weekDay = GameSystem.date.weekDay;
+            currentDate.AddDay(voyage.travelTime);
+            return currentDate;
+        }
+        else
+        {
+            return null;
+        }
 
-        currentDate.AddDay(voyage.travelTime);
-        return currentDate;
     }
 
     public void OnConfirmButton()

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde82613d44f3364daa269dac4d64b8d, type: 3}
   m_Name: GoldenGate_RE_PasChance
   m_EditorClassIdentifier: 
-  eventTitle: GoldenGate
+  eventTitle: Golden Gate
   eventText: "Il y avait beaucoup de brouillard je n\u2019ai pas pu appr\xE9cier
     la vue je suis un peu d\xE9\xE7u, des habitants m\u2019ont dit que c\u2019\xE9tait
     assez r\xE9curent. Conseil : Renseignez vous sur la m\xE9t\xE9o avant d\u2019y

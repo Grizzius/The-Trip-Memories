@@ -53,6 +53,7 @@ public class VisitUIScript : UIParentScript
             GameSystem.playerMoney += randomEvent.moneyModifier;
             GameSystem.playerLuck += randomEvent.luckModifier;
             GameSystem.playerKnowledge += randomEvent.knowledgeModifier;
+            GameSystem.playerMemories += randomEvent.memoryModifier;
 
             foreach(TriggerModifier modifier in randomEvent.triggerModifiers)
             {

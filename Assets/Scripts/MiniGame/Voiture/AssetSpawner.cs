@@ -5,7 +5,7 @@ using UnityEngine;
 public class AssetSpawner : MonoBehaviour
 {
     public List<AssetSpawnData> assetList;
-    public float spawnDelay;
+    public Vector2 spawnDelay;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class AssetSpawner : MonoBehaviour
 
     AssetSpawnData RandomAsset()
     {
-        int i = Random.Range(0, assetList.Count - 1);
+        int i = Random.Range(0, assetList.Count);
         return assetList[i];
     }
 
@@ -29,7 +29,7 @@ public class AssetSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(spawnDelay);
+            yield return new WaitForSeconds(Random.Range(spawnDelay.x, spawnDelay.y));
             AssetSpawnData spawnData = RandomAsset();
             GameObject asset = Instantiate(spawnData.asset);
             asset.transform.position = transform.position + spawnData.spawnOffset;

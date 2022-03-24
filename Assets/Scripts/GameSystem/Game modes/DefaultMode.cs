@@ -10,7 +10,10 @@ public class DefaultMode : GameMode
     {
         Debug.Log("Default game mode");
 
-        PlayerPositions.current.MovePlayer(GameSystem.current.playerStartPositionID);
+        if (PlayerPositions.current)
+        {
+            PlayerPositions.current.MovePlayer(0);
+        }
         EventSystem.current.OnAdvanceDate += CheckIfGoToWork;
     }
 
