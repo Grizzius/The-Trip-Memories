@@ -48,6 +48,8 @@ public class TransportOptionUI : UIParentScript
 
     public void OnConfirmButton()
     {
+        GameSystem.AddDay(voyage.travelTime);
+        GameSystem.playerMoney -= voyage.cost;
         switch (voyage.transportType)
         {
             case TransportType.avion:

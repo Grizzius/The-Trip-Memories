@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class PlaneMinigameUI : MonoBehaviour
 {
     public TextMeshProUGUI chronoText;
     public TextMeshProUGUI CollisionsCountText;
+
+    [Header("Result Screen")]
+    public Image resultPanel;
+    public TextMeshProUGUI collisionCount;
+    public TextMeshProUGUI lostTimeCount;
+    public TextMeshProUGUI lostMoneyCount;
 
     public static PlaneMinigameUI current;
 
@@ -16,12 +23,15 @@ public class PlaneMinigameUI : MonoBehaviour
     {
         current = this;
 
+        resultPanel.gameObject.SetActive(false);
+
         planeMinigame = (PlaneMinigame)GameSystem.gameMode;
 
         chronoText.text = planeMinigame.timer.ToString();
 
         EventSystem.current.OnPlaneCollision += UpdateCollision;
         EventSystem.current.OnStartPlaneMiniGame += StartTimer;
+        EventSystem.current.OnEndPlaneMinigame += DisplayResult;
 
         UpdateCollision();
     }
@@ -30,6 +40,14 @@ public class PlaneMinigameUI : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void DisplayResult()
+    {
+        resultPanel.gameObject.SetActive(true);
+        collisionCount.text = "Collisions : " + planeMinigame.collisionCount.ToString();
+        lostTimeCount.text = "Lost time : " + planeMinigame.lostDays.ToString() + " days";
+        lostMoneyCount.text = "Lost money : " + planeMinigame.lostMoney.ToString() + " $";
     }
 
     void StartTimer()

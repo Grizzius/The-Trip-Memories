@@ -4566,11 +4566,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9174949144978590589, guid: 979bf46599b1098488090359408fc96e, type: 3}
       propertyPath: playerPositionList.Array.data[1].x
-      value: 2.6
+      value: 3.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174949144978590589, guid: 979bf46599b1098488090359408fc96e, type: 3}
+      propertyPath: playerPositionList.Array.data[1].y
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9174949144978590589, guid: 979bf46599b1098488090359408fc96e, type: 3}
       propertyPath: playerPositionList.Array.data[1].z
-      value: 1
+      value: 1.65
       objectReference: {fileID: 0}
     - target: {fileID: 9174949144978590589, guid: 979bf46599b1098488090359408fc96e, type: 3}
       propertyPath: playerPositionList.Array.data[2].x

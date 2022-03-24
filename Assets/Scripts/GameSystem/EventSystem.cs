@@ -112,6 +112,13 @@ public class EventSystem : MonoBehaviour
         OnStartPlaneMiniGame?.Invoke();
     }
 
+    public event Action OnEndPlaneMinigame;
+
+    public void EndPlaneMinigame()
+    {
+        OnEndPlaneMinigame?.Invoke();
+    }
+
     //Voiture//
 
     public event Action OnStartCarMiniGame;

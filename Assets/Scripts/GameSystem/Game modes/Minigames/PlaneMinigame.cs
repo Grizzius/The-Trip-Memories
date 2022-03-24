@@ -24,6 +24,10 @@ public class PlaneMinigame : MiniGameGameMode
 
     public static PlaneMinigame current;
 
+    //Results variables
+    public int lostDays;
+    public int lostMoney;
+
     public PlaneMinigame(string NextSceneName)
     {
         nextSceneName = NextSceneName;
@@ -50,11 +54,26 @@ public class PlaneMinigame : MiniGameGameMode
         {
             player = Object.FindObjectOfType<PlaneController>();
         }
-
+        if(timer == -5)
+        {
+            EventSystem.current.EndPlaneMinigame();
+        }
         if(timer == -15)
         {
             GameSystem.ChangeScene(nextSceneName, new DefaultMode());
         }
+    }
+
+    public void CalculateResults()
+    {
+        int resultValue = 5;
+        if(collisionCount < 5)
+        {
+            resultValue = collisionCount;
+        }
+
+        lostMoney = collisionCount * 10;
+        lostDays = collisionCount;
     }
 
     public void IncreaseCollisionCount()
